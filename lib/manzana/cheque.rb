@@ -2,7 +2,7 @@ module Manzana
   class Cheque
     attr_accessor :data
 
-    def initialize(card_number:, number:, operation_type:, summ:, paid_by_bonus:, items:)
+    def initialize(card_number:, number:, operation_type:, summ:, discount:, summ_discounted:, paid_by_bonus:, items:)
       @data = {
         'Card' => {
           'CardNumber' => card_number

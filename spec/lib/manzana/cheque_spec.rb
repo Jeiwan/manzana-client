@@ -25,6 +25,8 @@ describe Manzana::Cheque do
         number: '12345',
         operation_type: 'Sale',
         summ: 123.45,
+        discount: 0,
+        summ_discounted: 0,
         paid_by_bonus: 0.0,
         items: [
           item1,

@@ -20,15 +20,25 @@ module Manzana
       @client.call(:process_request, message: build_request('BalanceRequest', body))
     end
 
+    def cheque_request(type: 'Soft', cheque:)
+      @client.call(:process_request, message: build_request('ChequeRequest', cheque, { 'ChequeType' => type }))
+    end
+
     private
 
-    def build_request(operation, body)
-      {
+    def build_request(operation, body, argument = nil)
+      request = {
         request: {
           operation => merge_with_common_data(body)
         },
         'OrgName' => @org_name
       }
+
+      if arguments
+        request[:request][operation].merge!("@#{argument.keys[0]}" => arguments.values[0])
+      else
+        request
+      end
     end
 
     def merge_with_common_data(body)
