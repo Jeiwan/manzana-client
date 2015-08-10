@@ -43,6 +43,16 @@ module Manzana
 
     def merge_with_common_data(body)
       body.merge!(common_data)
+
+      if body['ChequeReference'].present?
+        body['ChequeReference'].merge!(
+          'Organization' => @organization,
+          'BusinessUnit' => @business_unit,
+          'POS' => @pos
+        )
+      else
+        body
+      end
     end
 
     def generate_request_id
