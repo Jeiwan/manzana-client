@@ -3,7 +3,7 @@ module Manzana
     attr_accessor :data
 
     def initialize(card_number:, number:, operation_type:, summ:, discount:, summ_discounted:, paid_by_bonus:, items:,
-                  cheque_reference: nil)
+                  cheque_reference: nil, coupon: nil)
       @data = {
         'Card' => {
           'CardNumber' => card_number
@@ -16,6 +16,7 @@ module Manzana
       }
 
       @data['ChequeReference'] = cheque_reference.data if cheque_reference
+      @data['Coupons'] = { 'Coupon' => { 'Number' => coupon } } if coupon
     end
   end
 end
