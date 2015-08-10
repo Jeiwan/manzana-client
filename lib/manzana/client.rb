@@ -1,5 +1,7 @@
 module Manzana
   class Client
+    include Sale
+
     def initialize(wsdl:, basic_auth: false, organization:, business_unit:, pos:, org_name:)
       @client = Savon.client(
         wsdl: wsdl,
@@ -24,7 +26,7 @@ module Manzana
 
     def cheque_request(type: 'Soft', cheque:)
       operation = 'ChequeRequest'
-      @client.call(:process_request, message: build_request(operation, cheque, { 'ChequeType' => type }))
+      response = @client.call(:process_request, message: build_request(operation, cheque, { 'ChequeType' => type }))
       parse_response(response.body, operation)
     end
 
@@ -46,14 +48,14 @@ module Manzana
         request: {
           operation => merge_with_common_data(body)
         },
-        'OrgName' => @org_name
+        'orgName' => @org_name
       }
 
       if argument
         request[:request][operation].merge!("@#{argument.keys[0]}" => argument.values[0])
-      else
-        request
       end
+
+      request
     end
 
     def merge_with_common_data(body)
@@ -78,6 +80,7 @@ module Manzana
       {
         'RequestID' => generate_request_id,
         'Organization' => @organization,
+        'DateTime' => DateTime.now.iso8601,
         'BusinessUnit' => @business_unit,
         'POS' => @pos
       }
