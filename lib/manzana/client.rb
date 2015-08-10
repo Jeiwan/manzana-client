@@ -17,14 +17,29 @@ module Manzana
       body = {
         'CardNumber' => card_number
       }
-      @client.call(:process_request, message: build_request('BalanceRequest', body))
+      operation = 'BalanceRequest'
+      response = @client.call(:process_request, message: build_request(operation, body))
+      parse_response(response.body, operation)
     end
 
     def cheque_request(type: 'Soft', cheque:)
-      @client.call(:process_request, message: build_request('ChequeRequest', cheque, { 'ChequeType' => type }))
+      operation = 'ChequeRequest'
+      @client.call(:process_request, message: build_request(operation, cheque, { 'ChequeType' => type }))
+      parse_response(response.body, operation)
     end
 
     private
+
+    def parse_response(response, operation)
+      operation.gsub!('Request', 'Response').gsub!(/([^A-Z])([A-Z]+)/, '\1_\2').downcase!
+      body = response[:process_request_response][:process_request_result][operation.to_sym]
+
+      if body[:return_code] != 0
+        raise Manzana::Exceptions::RequestError, "Ошибка #{body[:return_code]}: #{body[:message]}"
+      else
+        body
+      end
+    end
 
     def build_request(operation, body, argument = nil)
       request = {
@@ -34,8 +49,8 @@ module Manzana
         'OrgName' => @org_name
       }
 
-      if arguments
-        request[:request][operation].merge!("@#{argument.keys[0]}" => arguments.values[0])
+      if argument
+        request[:request][operation].merge!("@#{argument.keys[0]}" => argument.values[0])
       else
         request
       end
@@ -44,7 +59,7 @@ module Manzana
     def merge_with_common_data(body)
       body.merge!(common_data)
 
-      if body['ChequeReference'].present?
+      if body['ChequeReference']
         body['ChequeReference'].merge!(
           'Organization' => @organization,
           'BusinessUnit' => @business_unit,

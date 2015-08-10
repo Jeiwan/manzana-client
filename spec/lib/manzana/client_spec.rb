@@ -1,3 +1,5 @@
+require 'ostruct'
+
 describe Manzana::Client do
   subject do
     Manzana::Client.new(
@@ -11,10 +13,34 @@ describe Manzana::Client do
   end
 
   describe '#balance_request' do
-    it "returns card's balance" do
-      allow(subject).to receive(:balance_request).and_return(cardBalance: 100)
+    context 'when card number is incorrect' do
+      it 'raises an error' do
+        allow_any_instance_of(Savon::Client).to receive(:call).and_return(
+          OpenStruct.new(body: {
+            process_request_response: {
+              process_request_result: {
+                balance_response: {
+                  transactionId: '123123123',
+                  requestId: '123123123',
+                  processed: DateTime.now.iso8601,
+                  returnCode: 31337,
+                  message: 'Неверный номер карты'
+                }
+              }
+            }
+          })
+        )
 
-      expect(subject.balance_request('12345')).to eq(cardBalance: 100)
+        expect{ subject.balance_request(card_number: '31337') }.to raise_error Manzana::Exceptions::RequestError
+      end
+    end
+
+    context 'when everything is fine' do
+      it "returns card's balance" do
+        allow(subject).to receive(:balance_request).and_return(cardBalance: 100)
+
+        expect(subject.balance_request('12345')).to eq(cardBalance: 100)
+      end
     end
   end
 
