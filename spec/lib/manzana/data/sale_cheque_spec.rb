@@ -19,13 +19,19 @@ describe Manzana::Data::SaleCheque do
         card_number: 31337,
         number: '123123123',
         paid_by_bonus: 0.0,
-        items: [item1, item2]
+        items: [item1, item2],
+        coupon: 1234
       ).data).to eq(
         'Card' => {
           'CardNumber' => 31337
         },
         'Number' => '123123123',
         'PaidByBonus' => 0.0,
+        'Coupons' => {
+          'Coupon' => {
+            'Number' => 1234
+          }
+        },
         'Item' => [
           {
             'Article' => 123,
