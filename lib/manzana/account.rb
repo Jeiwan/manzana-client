@@ -52,6 +52,16 @@ module Manzana
       parse_response(response.body)
     end
 
+    def card_replace(card_number:, mobile_phone:)
+      parameters = {
+        card_number: card_number,
+        mobile_phone: mobile_phone
+      }
+
+      response = @client.call(:execute, message: build_message('card_replace', parameters))
+      parse_response(response.body)
+    end
+
     private
 
     def build_message(contract_name, parameters)
