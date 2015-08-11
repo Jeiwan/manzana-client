@@ -1,11 +1,14 @@
 module Manzana
   class Account
-    def initialize(wsdl:, basic_auth: false, organization:, business_unit:, pos:, org_name:)
-      @client = Savon.client(
-        wsdl: wsdl,
-        basic_auth: basic_auth,
-        #convert_request_keys_to: :camelcase
-      )
+    def initialize(wsdl:, basic_auth: false, organization:, business_unit:, pos:, org_name:, logger: nil)
+      @client = Savon.client do
+        wsdl wsdl
+        basic_auth basic_auth
+        unless logger.nil?
+          log true
+          logger logger
+        end
+      end
 
       @organization = organization
       @business_unit = business_unit
