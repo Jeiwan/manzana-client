@@ -5,8 +5,7 @@ module Manzana
         @cheque = sale_cheque.data
         prepare_sale
 
-        cheque_request(type: 'Soft', cheque: @cheque)
-        cheque_request(type: 'Fiscal', cheque: @cheque)
+        perform_operation
       end
 
       def return(sale_cheque:, cheque_reference:)
@@ -14,8 +13,16 @@ module Manzana
         @cheque['ChequeReference'] = cheque_reference.data
         prepare_return
 
-        cheque_request(type: 'Soft', cheque: @cheque)
-        cheque_request(type: 'Fiscal', cheque: @cheque)
+        perform_operation
+      end
+
+      def rollback(card_number:, transaction_id:)
+        @cheque = {}
+        @cheque['Card'] = { 'CardNumber' => card_number }
+        @cheque['TransactionReference'] = { 'TransactionID' => transaction_id }
+        @cheque['OperationType'] = 'Rollback'
+
+        perform_operation
       end
 
       private
@@ -45,6 +52,11 @@ module Manzana
         @cheque['Summ'] = @cheque['Item'].map { |item| item['Summ'].to_f }.inject(:+)
         @cheque['SummDiscounted'] = @cheque['Item'].map { |item| item['SummDiscounted'].to_f }.inject(:+)
         @cheque['Discount'] = ((1 - @cheque['SummDiscounted'] / @cheque['Summ']) * 100).round(2)
+      end
+
+      def perform_operation
+        cheque_request(type: 'Soft', cheque: @cheque)
+        cheque_request(type: 'Fiscal', cheque: @cheque)
       end
     end
   end

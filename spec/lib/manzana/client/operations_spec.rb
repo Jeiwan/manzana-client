@@ -273,4 +273,64 @@ describe Manzana::Client do
       end
     end
   end
+
+  describe '#rollback' do
+    context 'when all parameters are correct' do
+      it 'returns result' do
+        message_body = {
+          request: {
+            'ChequeRequest' => {
+              'Card' => {
+                'CardNumber' => '123123123'
+              },
+              'RequestID' => 1234,
+              'DateTime' => DateTime.now.iso8601,
+              'Organization' => 'test',
+              'BusinessUnit' => 'test',
+              'POS' => 'test',
+              'OperationType' => 'Rollback',
+              'TransactionReference' => {
+                'TransactionID' => '321321321'
+              },
+              '@ChequeType' => 'Soft'
+            }
+          },
+          'orgName' => 'test'
+        }
+
+        response_body = {
+          transaction_id: '123123123',
+          request_id: '123123123',
+          processed: DateTime.now.iso8601,
+          return_code: 0,
+          message: 'OK',
+          card_balance: 100.0,
+          card_active_balance: 100.0,
+          card_summ: 10000,
+          card_summ_discunted: 10000,
+          card_discount: 0.0,
+          charged_bonus: 0,
+          active_charged_bonus: 0
+        }
+
+        allow_any_instance_of(Savon::Client).to receive(:call).and_return(
+          OpenStruct.new(
+            body: {
+              process_request_response: {
+                process_request_result: {
+                  cheque_response: response_body
+                }
+              }
+            }
+          )
+        )
+        expect_any_instance_of(Savon::Client).to receive(:call).with(
+          :process_request,
+          message: message_body
+        )
+
+        expect(subject.rollback(card_number: '123123123', transaction_id: '321321321')).to eq response_body
+      end
+    end
+  end
 end
