@@ -63,4 +63,49 @@ describe Manzana::Account do
       end
     end
   end
+
+  describe '#complete_registration' do
+    context 'when all parameters are correct' do
+      it 'returns result' do
+        allow_any_instance_of(Savon::Client).to receive(:call).and_return(
+          OpenStruct.new(
+            body: {
+              execute_response: {
+                execute_result: {
+                  xml_value: {
+                    result: true
+                  }
+                }
+              }
+            }
+          )
+        )
+
+        expect_any_instance_of(Savon::Client).to receive(:call).with(
+          :execute,
+          message: {
+            'sessionId' => '{00000000-0000-0000-0000-000000000000}',
+            'contractName' => 'complete_registration',
+            'Parameters' => {
+              'ServiceContractParameter' => [
+                {
+                  'Name' => 'contact_id',
+                  'Value' => 'c387f951-aa3e-e511-baa3-0012000000ff'
+                },
+                {
+                  'Name' => 'temp_code',
+                  'Value' => '1234'
+                }
+              ]
+            }
+          }
+        )
+
+        expect(subject.complete_registration(
+          contact_id: 'c387f951-aa3e-e511-baa3-0012000000ff',
+          temp_code: '1234'
+        )).to eq true
+      end
+    end
+  end
 end

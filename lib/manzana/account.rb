@@ -24,6 +24,16 @@ module Manzana
       parse_response(response.body)[:contact_id]
     end
 
+    def complete_registration(contact_id:, temp_code:)
+      parameters = {
+        contact_id: contact_id,
+        temp_code: temp_code
+      }
+
+      response = @client.call(:execute, message: build_message('complete_registration', parameters))
+      parse_response(response.body)
+    end
+
     private
 
     def build_message(contract_name, parameters)
@@ -42,7 +52,7 @@ module Manzana
 
     def parse_response(response)
       body = response[:execute_response][:execute_result][:xml_value][:result]
-      # проверка на ошибки
+      # TODO: проверка на ошибки
       body
     end
 
