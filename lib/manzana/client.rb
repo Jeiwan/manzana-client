@@ -1,6 +1,6 @@
 module Manzana
   class Client
-    include Sale
+    include Operations
 
     def initialize(wsdl:, basic_auth: false, organization:, business_unit:, pos:, org_name:)
       @client = Savon.client(
@@ -67,9 +67,9 @@ module Manzana
           'BusinessUnit' => @business_unit,
           'POS' => @pos
         )
-      else
-        body
       end
+
+      body
     end
 
     def generate_request_id
