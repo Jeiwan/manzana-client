@@ -3,6 +3,7 @@ require 'savon'
 module Manzana
 end
 
+require 'manzana/account.rb'
 require 'manzana/client/operations.rb'
 require 'manzana/client.rb'
 require 'manzana/data/cheque.rb'

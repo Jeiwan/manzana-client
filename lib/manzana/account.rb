@@ -1,0 +1,53 @@
+module Manzana
+  class Account
+    def initialize(wsdl:, basic_auth: false, organization:, business_unit:, pos:, org_name:)
+      @client = Savon.client(
+        wsdl: wsdl,
+        basic_auth: basic_auth,
+        #convert_request_keys_to: :camelcase
+      )
+
+      @organization = organization
+      @business_unit = business_unit
+      @pos = pos
+      @org_name = org_name
+    end
+
+    def contact_registration(mobile_phone:, card_number:, questionnaire_barcode:)
+      parameters = {
+        mobile_phone: mobile_phone,
+        card_number: card_number,
+        questionnaire_barcode: questionnaire_barcode
+      }
+
+      response = @client.call(:execute, message: build_message('contact_registration', parameters))
+      parse_response(response.body)[:contact_id]
+    end
+
+    private
+
+    def build_message(contract_name, parameters)
+      parameters = {
+        'ServiceContractParameter' => parameters.to_a.map! do |k, v|
+          { 'Name' => k.to_s, 'Value' => v }
+        end
+      }
+
+      {
+        'sessionId' => get_session,
+        'contractName' => contract_name,
+        'Parameters' => parameters
+      }
+    end
+
+    def parse_response(response)
+      body = response[:execute_response][:execute_result][:xml_value][:result]
+      # проверка на ошибки
+      body
+    end
+
+    def get_session
+      '{00000000-0000-0000-0000-000000000000}'
+    end
+  end
+end
