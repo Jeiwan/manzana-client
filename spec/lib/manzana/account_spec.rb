@@ -108,4 +108,44 @@ describe Manzana::Account do
       end
     end
   end
+
+  describe '#registration_code_send' do
+    context 'when all parameters are correct' do
+      it 'returns result' do
+        allow_any_instance_of(Savon::Client).to receive(:call).and_return(
+          OpenStruct.new(
+            body: {
+              execute_response: {
+                execute_result: {
+                  xml_value: {
+                    result: true
+                  }
+                }
+              }
+            }
+          )
+        )
+
+        expect_any_instance_of(Savon::Client).to receive(:call).with(
+          :execute,
+          message: {
+            'sessionId' => '{00000000-0000-0000-0000-000000000000}',
+            'contractName' => 'registration_code_send',
+            'Parameters' => {
+              'ServiceContractParameter' => [
+                {
+                  'Name' => 'contact_id',
+                  'Value' => 'c387f951-aa3e-e511-baa3-0012000000ff'
+                }
+              ]
+            }
+          }
+        )
+
+        expect(subject.registration_code_send(
+          contact_id: 'c387f951-aa3e-e511-baa3-0012000000ff'
+        )).to eq true
+      end
+    end
+  end
 end
