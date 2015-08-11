@@ -43,6 +43,15 @@ module Manzana
       parse_response(response.body)
     end
 
+    def rollback_registration(contact_id:)
+      parameters = {
+        contact_id: contact_id
+      }
+
+      response = @client.call(:execute, message: build_message('rollback_registration', parameters))
+      parse_response(response.body)
+    end
+
     private
 
     def build_message(contract_name, parameters)
