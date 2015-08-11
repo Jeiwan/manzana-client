@@ -75,7 +75,7 @@ describe Manzana::Client do
 
   describe '#cheque_request' do
     it 'returns result' do
-      item1 = Manzana::ChequeItem.new(
+      item1 = Manzana::Data::ChequeItem.new(
         position_number: 1,
         article: 1234,
         price: 123.0,
@@ -84,7 +84,7 @@ describe Manzana::Client do
         discount: 0.0,
         summ_discounted: 246.0
       )
-      item2 = Manzana::ChequeItem.new(
+      item2 = Manzana::Data::ChequeItem.new(
         position_number: 2,
         article: 4321,
         price: 100.0,
@@ -93,7 +93,7 @@ describe Manzana::Client do
         discount: 10.0,
         summ_discounted: 270.0
       )
-      cheque = Manzana::Cheque.new(
+      cheque = Manzana::Data::Cheque.new(
         card_number: '12345',
         number: '12345',
         operation_type: 'Sale',

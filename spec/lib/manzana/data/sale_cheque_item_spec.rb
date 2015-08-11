@@ -1,7 +1,7 @@
-describe Manzana::Sale do
+describe Manzana::Data::SaleCheque do
   describe '#data' do
     it 'returns prepared data' do
-      expect(Manzana::SaleItem.new(
+      expect(Manzana::Data::SaleChequeItem.new(
         article: 123,
         price: 100.0,
         quantity: 2,

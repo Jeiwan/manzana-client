@@ -1,21 +1,21 @@
-describe Manzana::Sale do
+describe Manzana::Data::SaleCheque do
   describe '#data' do
     it 'returns prepared data' do
-      item1 = Manzana::SaleItem.new(
+      item1 = Manzana::Data::SaleChequeItem.new(
         article: 123,
         price: 100.0,
         quantity: 2,
         discount: 0
       )
 
-      item2 = Manzana::SaleItem.new(
+      item2 = Manzana::Data::SaleChequeItem.new(
         article: 31337,
         price: 100.0,
         quantity: 4,
         discount: 10
       )
 
-      expect(Manzana::Sale.new(
+      expect(Manzana::Data::SaleCheque.new(
         card_number: 31337,
         number: '123123123',
         paid_by_bonus: 0.0,

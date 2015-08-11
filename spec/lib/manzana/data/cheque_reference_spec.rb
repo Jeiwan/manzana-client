@@ -1,7 +1,7 @@
-describe Manzana::ChequeReference do
+describe Manzana::Data::ChequeReference do
   describe '#data' do
     it 'returns prepared data' do
-      expect(Manzana::ChequeReference.new(
+      expect(Manzana::Data::ChequeReference.new(
         number: '1234',
         date_time: DateTime.new(2015, 8, 10, 8)
       ).data).to eq(
