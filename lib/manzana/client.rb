@@ -5,7 +5,10 @@ module Manzana
     def initialize(wsdl:, basic_auth: false, organization:, business_unit:, pos:, org_name:, logger: nil)
       @client = Savon.client do
         wsdl wsdl
-        basic_auth basic_auth
+        if basic_auth
+          basic_auth basic_auth
+        end
+        ssl_verify_mode :none
         unless logger.nil?
           log true
           logger logger
@@ -20,7 +23,9 @@ module Manzana
 
     def balance_request(card_number:)
       body = {
-        'CardNumber' => card_number
+        'Card' => {
+          'CardNumber' => card_number
+        }
       }
       operation = 'BalanceRequest'
       response = @client.call(:process_request, message: build_request(operation, body))

@@ -3,72 +3,43 @@ require 'ostruct'
 describe Manzana::Client do
   subject do
     Manzana::Client.new(
-      wsdl: 'https://localhost?WSDL',
+      wsdl: 'https://mbsdevweb13sp3.manzanagroup.ru:8088/POSProcessing.asmx?WSDL',
       basic_auth: false,
-      organization: 'test',
-      business_unit: 'test',
-      pos: 'test',
-      org_name: 'test'
+      organization: 'ilnepartner01',
+      business_unit: 'ilneshop01',
+      pos: 'ilnepos01',
+      org_name: 'A5',
+      logger: Logger.new(STDOUT)
     )
   end
 
   describe '#balance_request' do
     context 'when card number is incorrect' do
-      it 'raises an error' do
-        allow_any_instance_of(Savon::Client).to receive(:call).and_return(
-          OpenStruct.new(body: {
-            process_request_response: {
-              process_request_result: {
-                balance_response: {
-                  transaction_id: '123123123',
-                  request_id: '123123123',
-                  processed: DateTime.now.iso8601,
-                  return_code: 31337,
-                  message: 'Неверный номер карты'
-                }
-              }
-            }
-          })
-        )
-
-        expect{ subject.balance_request(card_number: '31337') }.to raise_error Manzana::Exceptions::RequestError
+      it 'returns an error' do
+        VCR.use_cassette('balance_request/wrong_card_number') do
+          expect(subject.balance_request(card_number: '31337')).to include(
+            message: 'Карта не найдена',
+            return_code: '80241'
+          )
+        end
       end
     end
 
     context 'when everything is fine' do
       it "returns card's balance" do
-        processed = DateTime.now.iso8601
-        allow_any_instance_of(Savon::Client).to receive(:call).and_return(
-          OpenStruct.new(body: {
-            process_request_response: {
-              process_request_result: {
-                balance_response: {
-                  transaction_id: '123123123',
-                  request_id: '123123123',
-                  processed: processed,
-                  return_code: 0,
-                  card_balance: 100,
-                  card_activeBalance: 100,
-                  card_summ: 10000,
-                  card_summ_discounted: 10000,
-                  card_discount: 0
-                }
-              }
-            }
-          })
-        )
-
-        expect(subject.balance_request(card_number: '12345')).to eq(
-          transaction_id: '123123123',
-          request_id: '123123123',
-          processed: processed,
-          return_code: 0,
-          card_balance: 100,
-          card_activeBalance: 100,
-          card_summ: 10000,
-          card_summ_discounted: 10000,
-          card_discount: 0
-        )
+        VCR.use_cassette('balance_request/success') do
+          expect(subject.balance_request(card_number: '2015100')).to include(
+            card_active_balance: '1000.00',
+            card_balance: '1000.00',
+            card_discount: '0.000',
+            card_number: '2015100',
+            card_summ: '0.00',
+            card_summ_discounted: '0.00',
+            message: 'OK',
+            request_id: '1234',
+            return_code: '0'
+          )
+        end
       end
     end
   end
