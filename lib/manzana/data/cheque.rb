@@ -12,6 +12,8 @@ module Manzana
           'Number' => number,
           'OperationType' => operation_type,
           'Summ' => summ,
+          'Discount' => discount.round(3),
+          'SummDiscounted' => summ_discounted,
           'PaidByBonus' => paid_by_bonus,
           'Item' => items.map(&:data)
         }

@@ -45,8 +45,8 @@ describe Manzana::Client do
   end
 
   describe '#cheque_request' do
-    it 'returns result' do
-      item1 = Manzana::Data::ChequeItem.new(
+    let(:item1) do
+      Manzana::Data::ChequeItem.new(
         position_number: 1,
         article: 1234,
         price: 123.0,
@@ -55,7 +55,9 @@ describe Manzana::Client do
         discount: 0.0,
         summ_discounted: 246.0
       )
-      item2 = Manzana::Data::ChequeItem.new(
+    end
+    let(:item2) do
+      Manzana::Data::ChequeItem.new(
         position_number: 2,
         article: 4321,
         price: 100.0,
@@ -64,12 +66,14 @@ describe Manzana::Client do
         discount: 10.0,
         summ_discounted: 270.0
       )
-      cheque = Manzana::Data::Cheque.new(
-        card_number: '12345',
-        number: '12345',
+    end
+    let(:cheque) do
+      Manzana::Data::Cheque.new(
+        card_number: '201541',
+        number: '3ce05a51-e816-4825-a6a7-bcb5b80bbd0b',
         operation_type: 'Sale',
         summ: 546.0,
-        discount: 0.05,
+        discount: '0.054',
         summ_discounted: 516.0,
         paid_by_bonus: 0.0,
         items: [
@@ -77,44 +81,57 @@ describe Manzana::Client do
           item2
         ]
       )
+    end
 
-      response = {
-        card_balance: 516.0,
-        card_activeBalance: 516.0,
-        card_summ: 546.0,
-        card_summDiscounted: 516.0,
-        card_discount: 0.0,
-        summ: 546.0,
-        discount: 0.0,
-        summ_discounted: 546.0,
-        charged_bonus: 516.0,
-        items: [
-          {
-            position_number: 1,
-            article: 1234,
-            price: 123.0,
-            quantity: 2,
-            summ: 246.0,
-            discount: 0.0,
-            summ_discounted: 246.0,
-            available_payment: 0.0
-          },
-          {
-            position_number: 2,
-            article: 4321,
-            price: 100.0,
-            quantity: 3,
-            summ: 300.0,
-            discount: 10.0,
-            summ_discounted: 270.0,
-            available_payment: 0.0
-          }
-        ]
-      }
-
-      allow(subject).to receive(:cheque_request).and_return(response)
-
-      expect(subject.cheque_request(type: 'Soft', cheque: cheque)).to eq(response)
+    context 'when soft request is made' do
+      context 'when all parameters are correct' do
+        it 'returns result without error' do
+          VCR.use_cassette('cheque_request/soft_success') do
+            expect(subject.cheque_request(type: 'Soft', cheque: cheque)).to include(
+              active_charged_bonus: '0.00',
+              available_payment: '0.00',
+              card_active_balance: '0',
+              card_balance: '0',
+              card_discount: '0',
+              card_number: '201541',
+              card_quantity: '1',
+              card_summ: '546',
+              charged_bonus: '0.00',
+              discount: '0.054',
+              item: [
+                {
+                  position_number: '1',
+                  article: '1234',
+                  price: '123.00',
+                  quantity: '2.000',
+                  summ: '246.00',
+                  discount: '0.000',
+                  summ_discounted: '246.00',
+                  available_payment: '0.00',
+                  writeoff_bonus: '0.00'
+                },
+                {
+                  position_number: '2',
+                  article: '4321',
+                  price: '100.00',
+                  quantity: '3.000',
+                  summ: '300.00',
+                  discount: '10.000',
+                  summ_discounted: '270.00',
+                  available_payment: '0.00',
+                  writeoff_bonus: '0.00'
+                }
+              ],
+              message: 'OK',
+              summ: '546.00',
+              summ_discounted: '516.00',
+              request_id: '1234',
+              return_code: '0',
+              writeoff_bonus: '0.00'
+            )
+          end
+        end
+      end
     end
   end
 end

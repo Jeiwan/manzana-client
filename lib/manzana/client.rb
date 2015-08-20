@@ -48,7 +48,7 @@ module Manzana
     def build_request(operation, body, argument = nil)
       request = {
         request: {
-          operation => merge_with_common_data(body)
+          operation => merge_with_common_data(body.data)
         },
         'orgName' => @org_name
       }
