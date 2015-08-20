@@ -37,13 +37,7 @@ module Manzana
 
     def parse_response(response, operation)
       operation.gsub!('Request', 'Response').gsub!(/([^A-Z])([A-Z]+)/, '\1_\2').downcase!
-      body = response[:process_request_response][:process_request_result][operation.to_sym]
-
-      if body[:return_code] != 0
-        raise Manzana::Exceptions::RequestError, "Ошибка #{body[:return_code]}: #{body[:message]}"
-      else
-        body
-      end
+      response[:process_request_response][:process_request_result][operation.to_sym]
     end
 
     def build_request(operation, body, argument = nil)
