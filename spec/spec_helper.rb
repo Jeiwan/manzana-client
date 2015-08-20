@@ -15,9 +15,18 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
+require 'vcr'
+require 'webmock'
 require 'manzana'
 
 RSpec.configure do |config|
+  VCR.configure do |config|
+    config.hook_into :webmock
+    config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+    config.configure_rspec_metadata!
+    config.preserve_exact_body_bytes { true }
+    config.allow_http_connections_when_no_cassette = true
+  end
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
 =begin
