@@ -27,7 +27,7 @@ describe Manzana::Data::Cheque do
           operation_type: 'Sale',
           summ: 123.45,
           discount: 0,
-          summ_discounted: 0,
+          summ_discounted: 123.45,
           paid_by_bonus: 0.0,
           items: [
             item1,
@@ -40,6 +40,8 @@ describe Manzana::Data::Cheque do
           'Number' => '12345',
           'OperationType' => 'Sale',
           'Summ' => 123.45,
+          'Discount' => 0.0,
+          'SummDiscounted' => 123.45,
           'PaidByBonus' => 0.0,
           'Item' => [ item1.data, item2.data ]
         )
@@ -77,7 +79,7 @@ describe Manzana::Data::Cheque do
           operation_type: 'Return',
           summ: 123.45,
           discount: 0,
-          summ_discounted: 0,
+          summ_discounted: 123.45,
           paid_by_bonus: 0.0,
           cheque_reference: cheque_reference,
           items: [
@@ -91,6 +93,8 @@ describe Manzana::Data::Cheque do
           'Number' => '12345',
           'OperationType' => 'Return',
           'Summ' => 123.45,
+          'Discount' => 0.0,
+          'SummDiscounted' => 123.45,
           'PaidByBonus' => 0.0,
           'ChequeReference' => cheque_reference.data,
           'Item' => [ item1.data, item2.data ]
@@ -125,7 +129,7 @@ describe Manzana::Data::Cheque do
           operation_type: 'Return',
           summ: 123.45,
           discount: 0,
-          summ_discounted: 0,
+          summ_discounted: 123.45,
           paid_by_bonus: 0.0,
           coupon: '123123123',
           items: [
@@ -144,6 +148,8 @@ describe Manzana::Data::Cheque do
           'Number' => '12345',
           'OperationType' => 'Return',
           'Summ' => 123.45,
+          'Discount' => 0.0,
+          'SummDiscounted' => 123.45,
           'PaidByBonus' => 0.0,
           'Item' => [ item1.data, item2.data ]
         )
