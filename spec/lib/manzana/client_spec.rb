@@ -42,6 +42,34 @@ describe Manzana::Client do
         end
       end
     end
+
+    context 'when client has filled info' do
+      it "it returns card balance and client full info" do
+        VCR.use_cassette('balance_request/success_full') do
+          expect(subject.balance_request(card_number: '201542')).to include(
+            age: "115",
+            birth_date: Date.new(1900, 1, 1),
+            card_active_balance: "0.00",
+            card_balance: "0.00",
+            card_discount: "0.000",
+            card_number: "201542",
+            card_summ: "0.00",
+            card_summ_discounted: "0.00",
+            email: "i.kuznetsov@7pikes.com",
+            first_name: "Константин",
+            full_name: "Константин Константинопольский",
+            last_name: "Константинопольский",
+            level_name: "Базовый 3%",
+            message: "OK",
+            middle_name: "Константинович",
+            phone: "+71234567890",
+            request_id: "1234",
+            return_code: "0",
+            transaction_id: "-9223372036854774515",
+          )
+        end
+      end
+    end
   end
 
   describe '#cheque_request' do
