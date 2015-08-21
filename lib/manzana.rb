@@ -1,3 +1,4 @@
+require 'nori'
 require 'savon'
 
 module Manzana

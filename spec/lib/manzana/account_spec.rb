@@ -3,108 +3,61 @@ require 'ostruct'
 describe Manzana::Account do
   subject do
     Manzana::Account.new(
-      wsdl: 'https://localhost?WSDL',
-      basic_auth: false,
-      organization: 'test',
-      business_unit: 'test',
-      pos: 'test',
-      org_name: 'test'
+      wsdl: 'http://mbsdevweb13sp3.manzanagroup.ru:8188/PrivateOfficeDataService.asmx?WSDL',
+      organization: 'ilnepartner01',
+      business_unit: 'ilneshop01',
+      pos: 'ilnepos01',
+      org_name: 'A5',
+      logger: Logger.new(STDOUT)
     )
   end
 
   describe '#contact_registration' do
     context 'when all parameters are correct' do
-      it 'returns result' do
-        allow_any_instance_of(Savon::Client).to receive(:call).and_return(
-          OpenStruct.new(
-            body: {
-              execute_response: {
-                execute_result: {
-                  xml_value: {
-                    result: {
-                      contact_id: 'c387f951-aa3e-e511-baa3-0012000000ff'
-                    }
-                  }
-                }
-              }
-            }
-          )
-        )
+      it 'returns result without errors' do
+        VCR.use_cassette('contact_registration/success') do
+          expect(subject.contact_registration(
+            card_number: '201541',
+            mobile_phone: '+71234567890',
+            questionnaire_barcode: '321321321'
+          )).to eq(code: '0', result: { contact_id: '92520229-db47-e511-80df-00155dfa8014' })
+        end
+      end
+    end
 
-        expect_any_instance_of(Savon::Client).to receive(:call).with(
-          :execute,
-          message: {
-            'sessionId' => '{00000000-0000-0000-0000-000000000000}',
-            'contractName' => 'contact_registration',
-            'Parameters' => {
-              'ServiceContractParameter' => [
-                {
-                  'Name' => 'mobile_phone',
-                  'Value' => '+71234567890'
-                },
-                {
-                  'Name' => 'card_number',
-                  'Value' => '123123123'
-                },
-                {
-                  'Name' => 'questionnaire_barcode',
-                  'Value' => '321321321'
-                }
-              ]
-            }
-          }
-        )
-
-        expect(subject.contact_registration(
-          card_number: '123123123',
-          mobile_phone: '+71234567890',
-          questionnaire_barcode: '321321321'
-        )).to eq 'c387f951-aa3e-e511-baa3-0012000000ff'
+    context 'when some parameters are incorrect' do
+      it 'returns error' do
+        VCR.use_cassette('contact_registration/fail') do
+          expect(subject.contact_registration(
+            card_number: '31337',
+            mobile_phone: '+71234567890',
+            questionnaire_barcode: '321321321'
+          )).to eq(code: '110051', message: 'Карта не может быть использована для регистрации конткта.')
+        end
       end
     end
   end
 
   describe '#complete_registration' do
     context 'when all parameters are correct' do
-      it 'returns result' do
-        allow_any_instance_of(Savon::Client).to receive(:call).and_return(
-          OpenStruct.new(
-            body: {
-              execute_response: {
-                execute_result: {
-                  xml_value: {
-                    result: true
-                  }
-                }
-              }
-            }
-          )
-        )
+      it 'returns true' do
+        VCR.use_cassette('complete_registration/success') do
+          expect(subject.complete_registration(
+            contact_id: '92520229-db47-e511-80df-00155dfa8014',
+            temp_code: '61868054'
+          )).to eq(code: '0', result: true)
+        end
+      end
+    end
 
-        expect_any_instance_of(Savon::Client).to receive(:call).with(
-          :execute,
-          message: {
-            'sessionId' => '{00000000-0000-0000-0000-000000000000}',
-            'contractName' => 'complete_registration',
-            'Parameters' => {
-              'ServiceContractParameter' => [
-                {
-                  'Name' => 'contact_id',
-                  'Value' => 'c387f951-aa3e-e511-baa3-0012000000ff'
-                },
-                {
-                  'Name' => 'temp_code',
-                  'Value' => '1234'
-                }
-              ]
-            }
-          }
-        )
-
-        expect(subject.complete_registration(
-          contact_id: 'c387f951-aa3e-e511-baa3-0012000000ff',
-          temp_code: '1234'
-        )).to eq true
+    context 'when some parameters are incorrect' do
+      it 'returns error' do
+        VCR.use_cassette('complete_registration/fail') do
+          expect(subject.complete_registration(
+            contact_id: '92520229-db47-e511-80df-00155dfa8014',
+            temp_code: '61868054'
+          )).to eq(code: '110043', message: 'Временный код не найден.')
+        end
       end
     end
   end
