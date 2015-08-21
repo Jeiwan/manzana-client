@@ -115,44 +115,23 @@ describe Manzana::Account do
   describe '#card_replace' do
     context 'when all parameters are correct' do
       it 'returns result' do
-        allow_any_instance_of(Savon::Client).to receive(:call).and_return(
-          OpenStruct.new(
-            body: {
-              execute_response: {
-                execute_result: {
-                  xml_value: {
-                    result: true
-                  }
-                }
-              }
-            }
-          )
-        )
+        VCR.use_cassette('card_replace/success') do
+          expect(subject.card_replace(
+            card_number: '201542',
+            mobile_phone: '+71234567890'
+          )).to eq(code: '0', result: true)
+        end
+      end
+    end
 
-        expect_any_instance_of(Savon::Client).to receive(:call).with(
-          :execute,
-          message: {
-            'sessionId' => '{00000000-0000-0000-0000-000000000000}',
-            'contractName' => 'card_replace',
-            'Parameters' => {
-              'ServiceContractParameter' => [
-                {
-                  'Name' => 'card_number',
-                  'Value' => '123123123'
-                },
-                {
-                  'Name' => 'mobile_phone',
-                  'Value' => '+71234567890'
-                },
-              ]
-            }
-          }
-        )
-
-        expect(subject.card_replace(
-          card_number: '123123123',
-          mobile_phone: '+71234567890'
-        )).to eq true
+    context 'when some parameters are wrong' do
+      it 'returns error' do
+        VCR.use_cassette('card_replace/fail') do
+          expect(subject.card_replace(
+            card_number: '201542',
+            mobile_phone: '+71234567890'
+          )).to eq(code: '110051', message: 'Карта не может быть использована для замены.')
+        end
       end
     end
   end
