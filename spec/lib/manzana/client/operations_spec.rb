@@ -168,59 +168,51 @@ describe Manzana::Client do
   describe '#rollback' do
     context 'when all parameters are correct' do
       it 'returns result' do
-        message_body = {
-          request: {
-            'ChequeRequest' => {
-              'Card' => {
-                'CardNumber' => '123123123'
-              },
-              'RequestID' => 1234,
-              'DateTime' => DateTime.now.iso8601,
-              'Organization' => 'test',
-              'BusinessUnit' => 'test',
-              'POS' => 'test',
-              'OperationType' => 'Rollback',
-              'TransactionReference' => {
-                'TransactionID' => '321321321'
-              },
-              '@ChequeType' => 'Soft'
-            }
-          },
-          'orgName' => 'test'
-        }
-
-        response_body = {
-          transaction_id: '123123123',
-          request_id: '123123123',
-          processed: DateTime.now.iso8601,
-          return_code: 0,
-          message: 'OK',
-          card_balance: 100.0,
-          card_active_balance: 100.0,
-          card_summ: 10000,
-          card_summ_discunted: 10000,
-          card_discount: 0.0,
-          charged_bonus: 0,
-          active_charged_bonus: 0
-        }
-
-        allow_any_instance_of(Savon::Client).to receive(:call).and_return(
-          OpenStruct.new(
-            body: {
-              process_request_response: {
-                process_request_result: {
-                  cheque_response: response_body
-                }
-              }
-            }
+        VCR.use_cassette('rollback/success_simple') do
+          item1 = Manzana::Data::SaleChequeItem.new(
+            article: 123,
+            price: 100.0,
+            quantity: 2,
+            discount: 0
           )
-        )
-        expect_any_instance_of(Savon::Client).to receive(:call).with(
-          :process_request,
-          message: message_body
-        )
 
-        expect(subject.rollback(card_number: '123123123', transaction_id: '321321321')).to eq response_body
+          item2 = Manzana::Data::SaleChequeItem.new(
+            article: 456,
+            price: 333.0,
+            quantity: 4,
+            discount: 0
+          )
+
+          sale_cheque = Manzana::Data::SaleCheque.new(
+            card_number: '201542',
+            number: 'a8853611-8a68-429c-af07-16770ef6077f',
+            paid_by_bonus: 0.0,
+            items: [item1, item2]
+          )
+
+          transaction = subject.sale(sale_cheque: sale_cheque)[:transaction_id]
+
+          expect(subject.rollback(card_number: '201542', transaction_id: transaction)).to include(
+            active_charged_bonus: "0.00",
+            available_payment: "0.00",
+            card_active_balance: "0",
+            card_balance: "0",
+            card_discount: "0",
+            card_number: "201542",
+            card_quantity: "1",
+            card_summ: "0",
+            charged_bonus: "0.00",
+            discount: "0.000",
+            level_name: "Базовый 3%",
+            message: "OK",
+            request_id: "1234",
+            return_code: "0",
+            summ: "0.00",
+            summ_discounted: "0.00",
+            transaction_id: "-9223372036854774516",
+            writeoff_bonus: "0.00",
+          )
+        end
       end
     end
   end
