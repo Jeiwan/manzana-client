@@ -34,7 +34,7 @@ module Manzana
 
     def cheque_request(type: 'Soft', cheque:)
       operation = 'ChequeRequest'
-      response = @client.call(:process_request, message: build_request(operation, cheque.data, { 'ChequeType' => type }))
+      response = @client.call(:process_request, message: build_request(operation, cheque, { 'ChequeType' => type }))
       parse_response(response.body, operation)
     end
 
