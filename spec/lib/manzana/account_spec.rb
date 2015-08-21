@@ -65,39 +65,27 @@ describe Manzana::Account do
   describe '#registration_code_send' do
     context 'when all parameters are correct' do
       it 'returns result' do
-        allow_any_instance_of(Savon::Client).to receive(:call).and_return(
-          OpenStruct.new(
-            body: {
-              execute_response: {
-                execute_result: {
-                  xml_value: {
-                    result: true
-                  }
-                }
-              }
-            }
-          )
-        )
+        VCR.use_cassette('registration_code_send/success') do
+          contact_id = subject.contact_registration(
+            card_number: '201542',
+            mobile_phone: '+71231231231',
+            questionnaire_barcode: '123123123'
+          )[:result][:contact_id]
 
-        expect_any_instance_of(Savon::Client).to receive(:call).with(
-          :execute,
-          message: {
-            'sessionId' => '{00000000-0000-0000-0000-000000000000}',
-            'contractName' => 'registration_code_send',
-            'Parameters' => {
-              'ServiceContractParameter' => [
-                {
-                  'Name' => 'contact_id',
-                  'Value' => 'c387f951-aa3e-e511-baa3-0012000000ff'
-                }
-              ]
-            }
-          }
-        )
+          expect(subject.registration_code_send(
+            contact_id: contact_id
+          )).to eq(code: '0', result: true)
+        end
+      end
+    end
 
-        expect(subject.registration_code_send(
-          contact_id: 'c387f951-aa3e-e511-baa3-0012000000ff'
-        )).to eq true
+    context 'when some parameters are wrong' do
+      it 'returns error' do
+        VCR.use_cassette('registration_code_send/fail') do
+          expect(subject.registration_code_send(
+            contact_id: '7a3294f9-e447-e511-80df-00155dfa8014'
+          )).to eq(code: '100940', message: 'не удалось отправить пароль')
+        end
       end
     end
   end
@@ -105,39 +93,21 @@ describe Manzana::Account do
   describe '#rollback_registration' do
     context 'when all parameters are correct' do
       it 'returns result' do
-        allow_any_instance_of(Savon::Client).to receive(:call).and_return(
-          OpenStruct.new(
-            body: {
-              execute_response: {
-                execute_result: {
-                  xml_value: {
-                    result: true
-                  }
-                }
-              }
-            }
-          )
-        )
+        VCR.use_cassette('rollback_registration/success') do
+          expect(subject.rollback_registration(
+            contact_id: '7a3294f9-e447-e511-80df-00155dfa8014'
+          )).to eq(code: '0', result: true)
+        end
+      end
+    end
 
-        expect_any_instance_of(Savon::Client).to receive(:call).with(
-          :execute,
-          message: {
-            'sessionId' => '{00000000-0000-0000-0000-000000000000}',
-            'contractName' => 'rollback_registration',
-            'Parameters' => {
-              'ServiceContractParameter' => [
-                {
-                  'Name' => 'contact_id',
-                  'Value' => 'c387f951-aa3e-e511-baa3-0012000000ff'
-                }
-              ]
-            }
-          }
-        )
-
-        expect(subject.rollback_registration(
-          contact_id: 'c387f951-aa3e-e511-baa3-0012000000ff'
-        )).to eq true
+    context 'when some parameters are wrong' do
+      it 'returns error' do
+        VCR.use_cassette('rollback_registration/fail') do
+          expect(subject.rollback_registration(
+            contact_id: 'c72514ca-e447-e511-80df-00155dfa8014'
+          )).to eq(code: '110055', message: 'Регистрацию этого контакта нельзя отменить: у контакта более одной карты.')
+        end
       end
     end
   end
