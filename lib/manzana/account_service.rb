@@ -1,5 +1,5 @@
 module Manzana
-  class Account
+  class AccountService
     def initialize(wsdl:, basic_auth: false, organization:, business_unit:, pos:, org_name:, logger: nil)
       @client = Savon.client do
         wsdl wsdl

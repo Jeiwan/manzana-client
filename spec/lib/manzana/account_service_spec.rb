@@ -1,8 +1,8 @@
 require 'ostruct'
 
-describe Manzana::Account do
+describe Manzana::AccountService do
   subject do
-    Manzana::Account.new(
+    Manzana::AccountService.new(
       wsdl: 'http://mbsdevweb13sp3.manzanagroup.ru:8188/PrivateOfficeDataService.asmx?WSDL',
       organization: 'ilnepartner01',
       business_unit: 'ilneshop01',
