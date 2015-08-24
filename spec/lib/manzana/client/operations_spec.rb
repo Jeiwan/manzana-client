@@ -45,7 +45,7 @@ describe Manzana::Client do
             card_balance: "45.96",
             card_discount: "0",
             card_number: "201542",
-            card_quantity: "1",
+            card_quantity: "2",
             card_summ: "1532",
             charged_bonus: "45.96",
             discount: "0.000",
@@ -79,7 +79,6 @@ describe Manzana::Client do
             return_code: "0",
             summ: "1532.00",
             summ_discounted: "1532.00",
-            transaction_id: "-9223372036854774545",
             writeoff_bonus: "0.00",
           )
         end
@@ -114,7 +113,7 @@ describe Manzana::Client do
 
           cheque_reference = Manzana::Data::ChequeReference.new(
             number: '7c2115f3-ef35-4be8-b7b5-92e51c509444',
-            date_time: DateTime.iso8601('2015-08-21T12:45:40.74')
+            date_time: DateTime.iso8601('2015-08-24T07:21:52.163')
           )
 
           expect(subject.return(sale_cheque: sale_cheque, cheque_reference: cheque_reference)).to include(
@@ -124,7 +123,7 @@ describe Manzana::Client do
             card_balance: "0",
             card_discount: "0",
             card_number: "201542",
-            card_quantity: "1",
+            card_quantity: "2",
             card_summ: "0",
             discount: "0.000",
             item: [
@@ -157,7 +156,6 @@ describe Manzana::Client do
             return_code: "0",
             summ: "1532.00",
             summ_discounted: "1532.00",
-            transaction_id: "-9223372036854774541",
             writeoff_bonus: "45.96",
           )
         end

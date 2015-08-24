@@ -31,7 +31,7 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Date:
-      - Fri, 21 Aug 2015 10:02:55 GMT
+      - Mon, 24 Aug 2015 04:26:19 GMT
       Content-Length:
       - '3226'
     body:
@@ -432,107 +432,7 @@ http_interactions:
         T1NQcm9jZXNzaW5nLmFzbXgiIC8+DQogICAgPC93c2RsOnBvcnQ+DQogIDwv
         d3NkbDpzZXJ2aWNlPg0KPC93c2RsOmRlZmluaXRpb25zPg==
     http_version: 
-  recorded_at: Fri, 21 Aug 2015 10:03:02 GMT
-- request:
-    method: post
-    uri: https://mbsdevweb13sp3.manzanagroup.ru:8088/POSProcessing.asmx
-    body:
-      encoding: UTF-8
-      base64_string: |
-        PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48ZW52OkVu
-        dmVsb3BlIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxT
-        Y2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxT
-        Y2hlbWEtaW5zdGFuY2UiIHhtbG5zOnRucz0iaHR0cDovL2xveWFsdHkubWFu
-        emFuYWdyb3VwLnJ1L2xveWFsdHkueHNkIiB4bWxuczplbnY9Imh0dHA6Ly9z
-        Y2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIj48ZW52OkJvZHk+
-        PHRuczpQcm9jZXNzUmVxdWVzdD48dG5zOnJlcXVlc3Q+PHRuczpDaGVxdWVS
-        ZXF1ZXN0IENoZXF1ZVR5cGU9IlNvZnQiPjx0bnM6Q2FyZD48dG5zOkNhcmRO
-        dW1iZXI+MjAxNTQyPC90bnM6Q2FyZE51bWJlcj48L3RuczpDYXJkPjx0bnM6
-        TnVtYmVyPjNkZjZkZjRiLWY2OWYtNDAyNS05NTQ4LTk1NGY1NmI1NDY3ODwv
-        dG5zOk51bWJlcj48dG5zOlBhaWRCeUJvbnVzPjAuMDwvdG5zOlBhaWRCeUJv
-        bnVzPjx0bnM6SXRlbT48dG5zOkFydGljbGU+MTIzPC90bnM6QXJ0aWNsZT48
-        dG5zOlByaWNlPjEwMC4wPC90bnM6UHJpY2U+PHRuczpRdWFudGl0eT4yPC90
-        bnM6UXVhbnRpdHk+PHRuczpEaXNjb3VudD4wPC90bnM6RGlzY291bnQ+PHRu
-        czpTdW1tPjIwMC4wPC90bnM6U3VtbT48dG5zOlN1bW1EaXNjb3VudGVkPjIw
-        MC4wPC90bnM6U3VtbURpc2NvdW50ZWQ+PHRuczpQb3NpdGlvbk51bWJlcj4x
-        PC90bnM6UG9zaXRpb25OdW1iZXI+PC90bnM6SXRlbT48dG5zOkl0ZW0+PHRu
-        czpBcnRpY2xlPjQ1NjwvdG5zOkFydGljbGU+PHRuczpQcmljZT4zMzMuMDwv
-        dG5zOlByaWNlPjx0bnM6UXVhbnRpdHk+NDwvdG5zOlF1YW50aXR5Pjx0bnM6
-        RGlzY291bnQ+MDwvdG5zOkRpc2NvdW50Pjx0bnM6U3VtbT4xMzMyLjA8L3Ru
-        czpTdW1tPjx0bnM6U3VtbURpc2NvdW50ZWQ+MTMzMi4wPC90bnM6U3VtbURp
-        c2NvdW50ZWQ+PHRuczpQb3NpdGlvbk51bWJlcj4yPC90bnM6UG9zaXRpb25O
-        dW1iZXI+PC90bnM6SXRlbT48dG5zOkNoZXF1ZVJlZmVyZW5jZT48dG5zOk51
-        bWJlcj43YzIxMTVmMy1lZjM1LTRiZTgtYjdiNS05MmU1MWM1MDk0NDQ8L3Ru
-        czpOdW1iZXI+PHRuczpEYXRlVGltZT4yMDE1LTA4LTIxVDEyOjQ1OjQwKzAw
-        OjAwPC90bnM6RGF0ZVRpbWU+PHRuczpPcmdhbml6YXRpb24+aWxuZXBhcnRu
-        ZXIwMTwvdG5zOk9yZ2FuaXphdGlvbj48dG5zOkJ1c2luZXNzVW5pdD5pbG5l
-        c2hvcDAxPC90bnM6QnVzaW5lc3NVbml0Pjx0bnM6UE9TPmlsbmVwb3MwMTwv
-        dG5zOlBPUz48L3RuczpDaGVxdWVSZWZlcmVuY2U+PHRuczpTdW1tPjE1MzIu
-        MDwvdG5zOlN1bW0+PHRuczpTdW1tRGlzY291bnRlZD4xNTMyLjA8L3RuczpT
-        dW1tRGlzY291bnRlZD48dG5zOkRpc2NvdW50PjAuMDwvdG5zOkRpc2NvdW50
-        Pjx0bnM6T3BlcmF0aW9uVHlwZT5SZXR1cm48L3RuczpPcGVyYXRpb25UeXBl
-        Pjx0bnM6UmVxdWVzdElEPjEyMzQ8L3RuczpSZXF1ZXN0SUQ+PHRuczpPcmdh
-        bml6YXRpb24+aWxuZXBhcnRuZXIwMTwvdG5zOk9yZ2FuaXphdGlvbj48dG5z
-        OkRhdGVUaW1lPjIwMTUtMDgtMjFUMTM6MDM6MDIrMDM6MDA8L3RuczpEYXRl
-        VGltZT48dG5zOkJ1c2luZXNzVW5pdD5pbG5lc2hvcDAxPC90bnM6QnVzaW5l
-        c3NVbml0Pjx0bnM6UE9TPmlsbmVwb3MwMTwvdG5zOlBPUz48L3RuczpDaGVx
-        dWVSZXF1ZXN0PjwvdG5zOnJlcXVlc3Q+PHRuczpvcmdOYW1lPkE1PC90bnM6
-        b3JnTmFtZT48L3RuczpQcm9jZXNzUmVxdWVzdD48L2VudjpCb2R5PjwvZW52
-        OkVudmVsb3BlPg==
-    headers:
-      Soapaction:
-      - '"http://loyalty.manzanagroup.ru/loyalty.xsd/ProcessRequest"'
-      Content-Type:
-      - text/xml;charset=UTF-8
-      Content-Length:
-      - '1765'
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - private, max-age=0
-      Content-Type:
-      - text/xml; charset=utf-8
-      Vary:
-      - Accept-Encoding
-      Server:
-      - Microsoft-IIS/8.5
-      X-Aspnet-Version:
-      - 4.0.30319
-      X-Powered-By:
-      - ASP.NET
-      Date:
-      - Fri, 21 Aug 2015 10:02:55 GMT
-      Content-Length:
-      - '544'
-    body:
-      encoding: ASCII-8BIT
-      base64_string: |
-        PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c29hcDpF
-        bnZlbG9wZSB4bWxuczpzb2FwPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9y
-        Zy9zb2FwL2VudmVsb3BlLyIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9y
-        Zy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM6eHNkPSJodHRwOi8v
-        d3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSI+PHNvYXA6Qm9keT48UHJvY2Vz
-        c1JlcXVlc3RSZXNwb25zZSB4bWxucz0iaHR0cDovL2xveWFsdHkubWFuemFu
-        YWdyb3VwLnJ1L2xveWFsdHkueHNkIj48UHJvY2Vzc1JlcXVlc3RSZXN1bHQ+
-        PENoZXF1ZVJlc3BvbnNlPjxUcmFuc2FjdGlvbklEPi05MjIzMzcyMDM2ODU0
-        Nzc0NTQyPC9UcmFuc2FjdGlvbklEPjxSZXF1ZXN0SUQ+MTIzNDwvUmVxdWVz
-        dElEPjxQcm9jZXNzZWQ+MjAxNS0wOC0yMVQxMzowMjo1NS42MTc8L1Byb2Nl
-        c3NlZD48UmV0dXJuQ29kZT44OTE0MTwvUmV0dXJuQ29kZT48TWVzc2FnZT7Q
-        n9C+INC00LDQvdC90L7QvNGDINCy0LjQtNGDINGH0LXQutC+0LIg0LLQvtC3
-        0LLRgNCw0YIg0L3QtdCy0L7Qt9C80L7QttC10L08L01lc3NhZ2U+PC9DaGVx
-        dWVSZXNwb25zZT48L1Byb2Nlc3NSZXF1ZXN0UmVzdWx0PjwvUHJvY2Vzc1Jl
-        cXVlc3RSZXNwb25zZT48L3NvYXA6Qm9keT48L3NvYXA6RW52ZWxvcGU+
-    http_version: 
-  recorded_at: Fri, 21 Aug 2015 10:03:02 GMT
+  recorded_at: Mon, 24 Aug 2015 04:26:26 GMT
 - request:
     method: post
     uri: https://mbsdevweb13sp3.manzanagroup.ru:8088/POSProcessing.asmx
@@ -549,31 +449,31 @@ http_interactions:
         ZXF1ZXN0IENoZXF1ZVR5cGU9IkZpc2NhbCI+PHRuczpDYXJkPjx0bnM6Q2Fy
         ZE51bWJlcj4yMDE1NDI8L3RuczpDYXJkTnVtYmVyPjwvdG5zOkNhcmQ+PHRu
         czpOdW1iZXI+M2RmNmRmNGItZjY5Zi00MDI1LTk1NDgtOTU0ZjU2YjU0Njc4
-        PC90bnM6TnVtYmVyPjx0bnM6UGFpZEJ5Qm9udXM+MC4wPC90bnM6UGFpZEJ5
-        Qm9udXM+PHRuczpJdGVtPjx0bnM6QXJ0aWNsZT4xMjM8L3RuczpBcnRpY2xl
-        Pjx0bnM6UHJpY2U+MTAwLjA8L3RuczpQcmljZT48dG5zOlF1YW50aXR5PjI8
-        L3RuczpRdWFudGl0eT48dG5zOkRpc2NvdW50PjA8L3RuczpEaXNjb3VudD48
-        dG5zOlN1bW0+MjAwLjA8L3RuczpTdW1tPjx0bnM6U3VtbURpc2NvdW50ZWQ+
-        MjAwLjA8L3RuczpTdW1tRGlzY291bnRlZD48dG5zOlBvc2l0aW9uTnVtYmVy
-        PjE8L3RuczpQb3NpdGlvbk51bWJlcj48L3RuczpJdGVtPjx0bnM6SXRlbT48
-        dG5zOkFydGljbGU+NDU2PC90bnM6QXJ0aWNsZT48dG5zOlByaWNlPjMzMy4w
-        PC90bnM6UHJpY2U+PHRuczpRdWFudGl0eT40PC90bnM6UXVhbnRpdHk+PHRu
-        czpEaXNjb3VudD4wPC90bnM6RGlzY291bnQ+PHRuczpTdW1tPjEzMzIuMDwv
-        dG5zOlN1bW0+PHRuczpTdW1tRGlzY291bnRlZD4xMzMyLjA8L3RuczpTdW1t
-        RGlzY291bnRlZD48dG5zOlBvc2l0aW9uTnVtYmVyPjI8L3RuczpQb3NpdGlv
-        bk51bWJlcj48L3RuczpJdGVtPjx0bnM6Q2hlcXVlUmVmZXJlbmNlPjx0bnM6
-        TnVtYmVyPjdjMjExNWYzLWVmMzUtNGJlOC1iN2I1LTkyZTUxYzUwOTQ0NDwv
-        dG5zOk51bWJlcj48dG5zOkRhdGVUaW1lPjIwMTUtMDgtMjFUMTI6NDU6NDAr
-        MDA6MDA8L3RuczpEYXRlVGltZT48dG5zOk9yZ2FuaXphdGlvbj5pbG5lcGFy
-        dG5lcjAxPC90bnM6T3JnYW5pemF0aW9uPjx0bnM6QnVzaW5lc3NVbml0Pmls
-        bmVzaG9wMDE8L3RuczpCdXNpbmVzc1VuaXQ+PHRuczpQT1M+aWxuZXBvczAx
-        PC90bnM6UE9TPjwvdG5zOkNoZXF1ZVJlZmVyZW5jZT48dG5zOlN1bW0+MTUz
-        Mi4wPC90bnM6U3VtbT48dG5zOlN1bW1EaXNjb3VudGVkPjE1MzIuMDwvdG5z
-        OlN1bW1EaXNjb3VudGVkPjx0bnM6RGlzY291bnQ+MC4wPC90bnM6RGlzY291
-        bnQ+PHRuczpPcGVyYXRpb25UeXBlPlJldHVybjwvdG5zOk9wZXJhdGlvblR5
-        cGU+PHRuczpSZXF1ZXN0SUQ+MTIzNDwvdG5zOlJlcXVlc3RJRD48dG5zOk9y
+        PC90bnM6TnVtYmVyPjx0bnM6T3BlcmF0aW9uVHlwZT5SZXR1cm48L3RuczpP
+        cGVyYXRpb25UeXBlPjx0bnM6U3VtbT4xNTMyLjA8L3RuczpTdW1tPjx0bnM6
+        RGlzY291bnQ+MC4wPC90bnM6RGlzY291bnQ+PHRuczpTdW1tRGlzY291bnRl
+        ZD4xNTMyLjA8L3RuczpTdW1tRGlzY291bnRlZD48dG5zOlBhaWRCeUJvbnVz
+        PjAuMDwvdG5zOlBhaWRCeUJvbnVzPjx0bnM6SXRlbT48dG5zOlBvc2l0aW9u
+        TnVtYmVyPjE8L3RuczpQb3NpdGlvbk51bWJlcj48dG5zOkFydGljbGU+MTIz
+        PC90bnM6QXJ0aWNsZT48dG5zOlByaWNlPjEwMC4wPC90bnM6UHJpY2U+PHRu
+        czpRdWFudGl0eT4yPC90bnM6UXVhbnRpdHk+PHRuczpTdW1tPjIwMC4wPC90
+        bnM6U3VtbT48dG5zOkRpc2NvdW50PjA8L3RuczpEaXNjb3VudD48dG5zOlN1
+        bW1EaXNjb3VudGVkPjIwMC4wPC90bnM6U3VtbURpc2NvdW50ZWQ+PC90bnM6
+        SXRlbT48dG5zOkl0ZW0+PHRuczpQb3NpdGlvbk51bWJlcj4yPC90bnM6UG9z
+        aXRpb25OdW1iZXI+PHRuczpBcnRpY2xlPjQ1NjwvdG5zOkFydGljbGU+PHRu
+        czpQcmljZT4zMzMuMDwvdG5zOlByaWNlPjx0bnM6UXVhbnRpdHk+NDwvdG5z
+        OlF1YW50aXR5Pjx0bnM6U3VtbT4xMzMyLjA8L3RuczpTdW1tPjx0bnM6RGlz
+        Y291bnQ+MDwvdG5zOkRpc2NvdW50Pjx0bnM6U3VtbURpc2NvdW50ZWQ+MTMz
+        Mi4wPC90bnM6U3VtbURpc2NvdW50ZWQ+PC90bnM6SXRlbT48dG5zOkNoZXF1
+        ZVJlZmVyZW5jZT48dG5zOk51bWJlcj43YzIxMTVmMy1lZjM1LTRiZTgtYjdi
+        NS05MmU1MWM1MDk0NDQ8L3RuczpOdW1iZXI+PHRuczpEYXRlVGltZT4yMDE1
+        LTA4LTI0VDA3OjIxOjUyKzAwOjAwPC90bnM6RGF0ZVRpbWU+PHRuczpPcmdh
+        bml6YXRpb24+aWxuZXBhcnRuZXIwMTwvdG5zOk9yZ2FuaXphdGlvbj48dG5z
+        OkJ1c2luZXNzVW5pdD5pbG5lc2hvcDAxPC90bnM6QnVzaW5lc3NVbml0Pjx0
+        bnM6UE9TPmlsbmVwb3MwMTwvdG5zOlBPUz48L3RuczpDaGVxdWVSZWZlcmVu
+        Y2U+PHRuczpSZXF1ZXN0SUQ+MTIzNDwvdG5zOlJlcXVlc3RJRD48dG5zOk9y
         Z2FuaXphdGlvbj5pbG5lcGFydG5lcjAxPC90bnM6T3JnYW5pemF0aW9uPjx0
-        bnM6RGF0ZVRpbWU+MjAxNS0wOC0yMVQxMzowMzowMiswMzowMDwvdG5zOkRh
+        bnM6RGF0ZVRpbWU+MjAxNS0wOC0yNFQwNzoyNjoyNiswMzowMDwvdG5zOkRh
         dGVUaW1lPjx0bnM6QnVzaW5lc3NVbml0PmlsbmVzaG9wMDE8L3RuczpCdXNp
         bmVzc1VuaXQ+PHRuczpQT1M+aWxuZXBvczAxPC90bnM6UE9TPjwvdG5zOkNo
         ZXF1ZVJlcXVlc3Q+PC90bnM6cmVxdWVzdD48dG5zOm9yZ05hbWU+QTU8L3Ru
@@ -610,7 +510,7 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Date:
-      - Fri, 21 Aug 2015 10:02:58 GMT
+      - Mon, 24 Aug 2015 04:26:20 GMT
       Content-Length:
       - '807'
     body:
@@ -624,15 +524,15 @@ http_interactions:
         c1JlcXVlc3RSZXNwb25zZSB4bWxucz0iaHR0cDovL2xveWFsdHkubWFuemFu
         YWdyb3VwLnJ1L2xveWFsdHkueHNkIj48UHJvY2Vzc1JlcXVlc3RSZXN1bHQ+
         PENoZXF1ZVJlc3BvbnNlPjxUcmFuc2FjdGlvbklEPi05MjIzMzcyMDM2ODU0
-        Nzc0NTQxPC9UcmFuc2FjdGlvbklEPjxSZXF1ZXN0SUQ+MTIzNDwvUmVxdWVz
-        dElEPjxQcm9jZXNzZWQ+MjAxNS0wOC0yMVQxMzowMjo1OC42NTc8L1Byb2Nl
+        Nzc0NTExPC9UcmFuc2FjdGlvbklEPjxSZXF1ZXN0SUQ+MTIzNDwvUmVxdWVz
+        dElEPjxQcm9jZXNzZWQ+MjAxNS0wOC0yNFQwNzoyNjoyMC41MDM8L1Byb2Nl
         c3NlZD48UmV0dXJuQ29kZT4wPC9SZXR1cm5Db2RlPjxNZXNzYWdlPk9LLiDQ
         odC/0LjRgdCw0L3QvjogNDUsOTY8L01lc3NhZ2U+PENhcmROdW1iZXI+MjAx
         NTQyPC9DYXJkTnVtYmVyPjxDYXJkQmFsYW5jZT4wPC9DYXJkQmFsYW5jZT48
         Q2FyZEFjdGl2ZUJhbGFuY2U+MDwvQ2FyZEFjdGl2ZUJhbGFuY2U+PENhcmRT
         dW1tPjA8L0NhcmRTdW1tPjxDYXJkRGlzY291bnQ+MDwvQ2FyZERpc2NvdW50
         PjxMZXZlbE5hbWU+0JHQsNC30L7QstGL0LkgMyU8L0xldmVsTmFtZT48Q2Fy
-        ZFF1YW50aXR5PjE8L0NhcmRRdWFudGl0eT48U3VtbT4xNTMyLjAwPC9TdW1t
+        ZFF1YW50aXR5PjI8L0NhcmRRdWFudGl0eT48U3VtbT4xNTMyLjAwPC9TdW1t
         PjxEaXNjb3VudD4wLjAwMDwvRGlzY291bnQ+PFN1bW1EaXNjb3VudGVkPjE1
         MzIuMDA8L1N1bW1EaXNjb3VudGVkPjxBY3RpdmVDaGFyZ2VkQm9udXM+MC4w
         MDwvQWN0aXZlQ2hhcmdlZEJvbnVzPjxBdmFpbGFibGVQYXltZW50PjAuMDA8
@@ -653,5 +553,5 @@ http_interactions:
         Y2Vzc1JlcXVlc3RSZXN1bHQ+PC9Qcm9jZXNzUmVxdWVzdFJlc3BvbnNlPjwv
         c29hcDpCb2R5Pjwvc29hcDpFbnZlbG9wZT4=
     http_version: 
-  recorded_at: Fri, 21 Aug 2015 10:03:05 GMT
+  recorded_at: Mon, 24 Aug 2015 04:26:27 GMT
 recorded_with: VCR 2.9.3
