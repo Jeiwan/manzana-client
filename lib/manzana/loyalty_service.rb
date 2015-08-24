@@ -1,5 +1,5 @@
 module Manzana
-  class Client
+  class LoyaltyService
     include Operations
 
     def initialize(wsdl:, basic_auth: false, organization:, business_unit:, pos:, org_name:, logger: nil)

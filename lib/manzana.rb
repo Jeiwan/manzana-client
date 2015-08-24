@@ -5,8 +5,8 @@ module Manzana
 end
 
 require 'manzana/account_service.rb'
-require 'manzana/client/operations.rb'
-require 'manzana/client.rb'
+require 'manzana/loyalty_service/operations.rb'
+require 'manzana/loyalty_service.rb'
 require 'manzana/data/cheque.rb'
 require 'manzana/data/cheque_item.rb'
 require 'manzana/data/cheque_reference.rb'

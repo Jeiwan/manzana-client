@@ -1,5 +1,5 @@
 module Manzana
-  class Client
+  class LoyaltyService
     module Operations
       def sale(sale_cheque:)
         cheque = prepare_cheque('Sale', sale_cheque)

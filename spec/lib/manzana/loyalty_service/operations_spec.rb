@@ -1,8 +1,8 @@
 require 'ostruct'
 
-describe Manzana::Client do
+describe Manzana::LoyaltyService do
   subject do
-    Manzana::Client.new(
+    Manzana::LoyaltyService.new(
       wsdl: 'https://mbsdevweb13sp3.manzanagroup.ru:8088/POSProcessing.asmx?WSDL',
       basic_auth: false,
       organization: 'ilnepartner01',
