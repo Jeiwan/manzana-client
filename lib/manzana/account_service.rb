@@ -11,6 +11,7 @@ module Manzana
           log true
           logger logger
         end
+        pretty_print_xml true
       end
 
       @organization = organization
