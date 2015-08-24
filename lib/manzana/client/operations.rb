@@ -2,11 +2,8 @@ module Manzana
   class Client
     module Operations
       def sale(sale_cheque:)
-        @cheque = sale_cheque.data
-        prepare_sale
-
-        cheque_request(type: 'Soft', cheque: @cheque)
-        cheque_request(type: 'Fiscal', cheque: @cheque)
+        cheque_request(type: 'Soft', cheque: prepare_cheque(sale_cheque))
+        cheque_request(type: 'Fiscal', cheque: prepare_cheque(sale_cheque))
       end
 
       def return(sale_cheque:, cheque_reference:)
@@ -14,7 +11,6 @@ module Manzana
         @cheque['ChequeReference'] = cheque_reference.data
         prepare_return
 
-        #cheque_request(type: 'Soft', cheque: @cheque)
         cheque_request(type: 'Fiscal', cheque: @cheque)
       end
 
@@ -28,6 +24,37 @@ module Manzana
       end
 
       private
+
+      def prepare_cheque(sale_cheque)
+        cheque_items = sale_cheque.data['Item'].map.with_index do |item, index|
+          discounted = item['Price'].to_f * (1 - (item['Discount'].to_f / 100))
+
+          Manzana::Data::ChequeItem.new(
+            position_number: index + 1,
+            article: item['Article'],
+            price: item['Price'],
+            quantity: item['Quantity'],
+            discount: item['Discount'],
+            summ: item['Price'].to_f * item['Quantity'].to_f,
+            summ_discounted: item['Quantity'].to_f * discounted
+          )
+        end
+
+        sale_cheque = sale_cheque.data
+        summ = cheque_items.map { |item| item.data['Summ'].to_f }.inject(:+)
+        summ_discounted = cheque_items.map { |item| item.data['SummDiscounted'].to_f }.inject(:+)
+        Manzana::Data::Cheque.new(
+          card_number: sale_cheque['Card']['CardNumber'],
+          number: sale_cheque['Number'],
+          operation_type: 'Sale',
+          summ: summ,
+          summ_discounted: summ_discounted,
+          discount: ((1 - summ_discounted / summ) * 100).round(2),
+          paid_by_bonus: sale_cheque['PaidByBonus'],
+          items: cheque_items,
+          coupon: sale_cheque['Coupons'] ? sale_cheque['Coupons']['Number'] : nil
+        )
+      end
 
       def prepare_sale
         prepare_items
