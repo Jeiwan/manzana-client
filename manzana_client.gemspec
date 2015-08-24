@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
-  s.name        = 'manzana-client'
-  s.version     = '0.0.1'
+  s.name        = 'manzana_client'
+  s.version     = '1.0.0'
   s.license     = 'MIT'
   s.summary     = 'Client for Manzana API'
   s.description = 'Client for Manzana API'

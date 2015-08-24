@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    manzana-client (0.0.1)
+    manzana_client (1.0.0)
       savon
 
 GEM
@@ -57,7 +57,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  manzana-client!
+  manzana_client!
   rspec (~> 3.0.0)
   vcr
   webmock
