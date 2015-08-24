@@ -183,7 +183,7 @@ describe Manzana::Client do
 
           sale_cheque = Manzana::Data::SaleCheque.new(
             card_number: '201542',
-            number: 'a8853611-8a68-429c-af07-16770ef6077f',
+            number: '4afd96ba-93d3-46ca-b02f-bff14f1b787a',
             paid_by_bonus: 0.0,
             items: [item1, item2]
           )
@@ -193,12 +193,12 @@ describe Manzana::Client do
           expect(subject.rollback(card_number: '201542', transaction_id: transaction)).to include(
             active_charged_bonus: "0.00",
             available_payment: "0.00",
-            card_active_balance: "0",
-            card_balance: "0",
+            card_active_balance: "45.96",
+            card_balance: "45.96",
             card_discount: "0",
             card_number: "201542",
-            card_quantity: "1",
-            card_summ: "0",
+            card_quantity: "3",
+            card_summ: "1532",
             charged_bonus: "0.00",
             discount: "0.000",
             level_name: "Базовый 3%",
@@ -207,7 +207,6 @@ describe Manzana::Client do
             return_code: "0",
             summ: "0.00",
             summ_discounted: "0.00",
-            transaction_id: "-9223372036854774516",
             writeoff_bonus: "0.00",
           )
         end

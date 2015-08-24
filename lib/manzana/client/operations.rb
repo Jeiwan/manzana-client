@@ -13,12 +13,11 @@ module Manzana
       end
 
       def rollback(card_number:, transaction_id:)
-        @cheque = {}
-        @cheque['Card'] = { 'CardNumber' => card_number }
-        @cheque['TransactionReference'] = { 'TransactionID' => transaction_id }
-        @cheque['OperationType'] = 'Rollback'
-
-        cheque_request(type: 'Fiscal', cheque: @cheque)
+        rollback_cheque = Manzana::Data::RollbackCheque.new(
+          card_number: card_number,
+          transaction_id: transaction_id
+        )
+        cheque_request(type: 'Fiscal', cheque: rollback_cheque)
       end
 
       private
@@ -53,33 +52,6 @@ module Manzana
           coupon: sale_cheque['Coupons'] ? sale_cheque['Coupons']['Number'] : nil,
           cheque_reference: cheque_reference
         )
-      end
-
-      def prepare_sale
-        prepare_items
-        prepare_receipt_sums
-        @cheque['OperationType'] = 'Sale'
-      end
-
-      def prepare_return
-        prepare_items
-        prepare_receipt_sums
-        @cheque['OperationType'] = 'Return'
-      end
-
-      def prepare_items
-        @cheque['Item'].each.with_index do |item, index|
-          item['Summ'] = item['Price'].to_f * item['Quantity'].to_f
-          discounted = item['Price'].to_f * (1 - (item['Discount'].to_f / 100))
-          item['SummDiscounted'] = item['Quantity'].to_f * discounted
-          item['PositionNumber'] = index + 1
-        end
-      end
-
-      def prepare_receipt_sums
-        @cheque['Summ'] = @cheque['Item'].map { |item| item['Summ'].to_f }.inject(:+)
-        @cheque['SummDiscounted'] = @cheque['Item'].map { |item| item['SummDiscounted'].to_f }.inject(:+)
-        @cheque['Discount'] = ((1 - @cheque['SummDiscounted'] / @cheque['Summ']) * 100).round(2)
       end
     end
   end

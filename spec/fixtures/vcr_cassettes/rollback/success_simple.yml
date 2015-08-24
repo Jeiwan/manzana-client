@@ -31,7 +31,7 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Date:
-      - Fri, 21 Aug 2015 10:36:06 GMT
+      - Mon, 24 Aug 2015 04:44:12 GMT
       Content-Length:
       - '3226'
     body:
@@ -432,7 +432,7 @@ http_interactions:
         T1NQcm9jZXNzaW5nLmFzbXgiIC8+DQogICAgPC93c2RsOnBvcnQ+DQogIDwv
         d3NkbDpzZXJ2aWNlPg0KPC93c2RsOmRlZmluaXRpb25zPg==
     http_version: 
-  recorded_at: Fri, 21 Aug 2015 10:36:12 GMT
+  recorded_at: Mon, 24 Aug 2015 04:44:17 GMT
 - request:
     method: post
     uri: https://mbsdevweb13sp3.manzanagroup.ru:8088/POSProcessing.asmx
@@ -448,26 +448,26 @@ http_interactions:
         PHRuczpQcm9jZXNzUmVxdWVzdD48dG5zOnJlcXVlc3Q+PHRuczpDaGVxdWVS
         ZXF1ZXN0IENoZXF1ZVR5cGU9IlNvZnQiPjx0bnM6Q2FyZD48dG5zOkNhcmRO
         dW1iZXI+MjAxNTQyPC90bnM6Q2FyZE51bWJlcj48L3RuczpDYXJkPjx0bnM6
-        TnVtYmVyPmE4ODUzNjExLThhNjgtNDI5Yy1hZjA3LTE2NzcwZWY2MDc3Zjwv
-        dG5zOk51bWJlcj48dG5zOlBhaWRCeUJvbnVzPjAuMDwvdG5zOlBhaWRCeUJv
-        bnVzPjx0bnM6SXRlbT48dG5zOkFydGljbGU+MTIzPC90bnM6QXJ0aWNsZT48
-        dG5zOlByaWNlPjEwMC4wPC90bnM6UHJpY2U+PHRuczpRdWFudGl0eT4yPC90
-        bnM6UXVhbnRpdHk+PHRuczpEaXNjb3VudD4wPC90bnM6RGlzY291bnQ+PHRu
-        czpTdW1tPjIwMC4wPC90bnM6U3VtbT48dG5zOlN1bW1EaXNjb3VudGVkPjIw
-        MC4wPC90bnM6U3VtbURpc2NvdW50ZWQ+PHRuczpQb3NpdGlvbk51bWJlcj4x
-        PC90bnM6UG9zaXRpb25OdW1iZXI+PC90bnM6SXRlbT48dG5zOkl0ZW0+PHRu
-        czpBcnRpY2xlPjQ1NjwvdG5zOkFydGljbGU+PHRuczpQcmljZT4zMzMuMDwv
-        dG5zOlByaWNlPjx0bnM6UXVhbnRpdHk+NDwvdG5zOlF1YW50aXR5Pjx0bnM6
-        RGlzY291bnQ+MDwvdG5zOkRpc2NvdW50Pjx0bnM6U3VtbT4xMzMyLjA8L3Ru
-        czpTdW1tPjx0bnM6U3VtbURpc2NvdW50ZWQ+MTMzMi4wPC90bnM6U3VtbURp
-        c2NvdW50ZWQ+PHRuczpQb3NpdGlvbk51bWJlcj4yPC90bnM6UG9zaXRpb25O
-        dW1iZXI+PC90bnM6SXRlbT48dG5zOlN1bW0+MTUzMi4wPC90bnM6U3VtbT48
-        dG5zOlN1bW1EaXNjb3VudGVkPjE1MzIuMDwvdG5zOlN1bW1EaXNjb3VudGVk
-        Pjx0bnM6RGlzY291bnQ+MC4wPC90bnM6RGlzY291bnQ+PHRuczpPcGVyYXRp
-        b25UeXBlPlNhbGU8L3RuczpPcGVyYXRpb25UeXBlPjx0bnM6UmVxdWVzdElE
+        TnVtYmVyPjRhZmQ5NmJhLTkzZDMtNDZjYS1iMDJmLWJmZjE0ZjFiNzg3YTwv
+        dG5zOk51bWJlcj48dG5zOk9wZXJhdGlvblR5cGU+U2FsZTwvdG5zOk9wZXJh
+        dGlvblR5cGU+PHRuczpTdW1tPjE1MzIuMDwvdG5zOlN1bW0+PHRuczpEaXNj
+        b3VudD4wLjA8L3RuczpEaXNjb3VudD48dG5zOlN1bW1EaXNjb3VudGVkPjE1
+        MzIuMDwvdG5zOlN1bW1EaXNjb3VudGVkPjx0bnM6UGFpZEJ5Qm9udXM+MC4w
+        PC90bnM6UGFpZEJ5Qm9udXM+PHRuczpJdGVtPjx0bnM6UG9zaXRpb25OdW1i
+        ZXI+MTwvdG5zOlBvc2l0aW9uTnVtYmVyPjx0bnM6QXJ0aWNsZT4xMjM8L3Ru
+        czpBcnRpY2xlPjx0bnM6UHJpY2U+MTAwLjA8L3RuczpQcmljZT48dG5zOlF1
+        YW50aXR5PjI8L3RuczpRdWFudGl0eT48dG5zOlN1bW0+MjAwLjA8L3RuczpT
+        dW1tPjx0bnM6RGlzY291bnQ+MDwvdG5zOkRpc2NvdW50Pjx0bnM6U3VtbURp
+        c2NvdW50ZWQ+MjAwLjA8L3RuczpTdW1tRGlzY291bnRlZD48L3RuczpJdGVt
+        Pjx0bnM6SXRlbT48dG5zOlBvc2l0aW9uTnVtYmVyPjI8L3RuczpQb3NpdGlv
+        bk51bWJlcj48dG5zOkFydGljbGU+NDU2PC90bnM6QXJ0aWNsZT48dG5zOlBy
+        aWNlPjMzMy4wPC90bnM6UHJpY2U+PHRuczpRdWFudGl0eT40PC90bnM6UXVh
+        bnRpdHk+PHRuczpTdW1tPjEzMzIuMDwvdG5zOlN1bW0+PHRuczpEaXNjb3Vu
+        dD4wPC90bnM6RGlzY291bnQ+PHRuczpTdW1tRGlzY291bnRlZD4xMzMyLjA8
+        L3RuczpTdW1tRGlzY291bnRlZD48L3RuczpJdGVtPjx0bnM6UmVxdWVzdElE
         PjEyMzQ8L3RuczpSZXF1ZXN0SUQ+PHRuczpPcmdhbml6YXRpb24+aWxuZXBh
         cnRuZXIwMTwvdG5zOk9yZ2FuaXphdGlvbj48dG5zOkRhdGVUaW1lPjIwMTUt
-        MDgtMjFUMTM6MzY6MTIrMDM6MDA8L3RuczpEYXRlVGltZT48dG5zOkJ1c2lu
+        MDgtMjRUMDc6NDQ6MTcrMDM6MDA8L3RuczpEYXRlVGltZT48dG5zOkJ1c2lu
         ZXNzVW5pdD5pbG5lc2hvcDAxPC90bnM6QnVzaW5lc3NVbml0Pjx0bnM6UE9T
         PmlsbmVwb3MwMTwvdG5zOlBPUz48L3RuczpDaGVxdWVSZXF1ZXN0PjwvdG5z
         OnJlcXVlc3Q+PHRuczpvcmdOYW1lPkE1PC90bnM6b3JnTmFtZT48L3RuczpQ
@@ -503,9 +503,9 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Date:
-      - Fri, 21 Aug 2015 10:36:08 GMT
+      - Mon, 24 Aug 2015 04:44:12 GMT
       Content-Length:
-      - '817'
+      - '823'
     body:
       encoding: ASCII-8BIT
       base64_string: |
@@ -517,37 +517,37 @@ http_interactions:
         c1JlcXVlc3RSZXNwb25zZSB4bWxucz0iaHR0cDovL2xveWFsdHkubWFuemFu
         YWdyb3VwLnJ1L2xveWFsdHkueHNkIj48UHJvY2Vzc1JlcXVlc3RSZXN1bHQ+
         PENoZXF1ZVJlc3BvbnNlPjxUcmFuc2FjdGlvbklEPi05MjIzMzcyMDM2ODU0
-        Nzc0NTE4PC9UcmFuc2FjdGlvbklEPjxSZXF1ZXN0SUQ+MTIzNDwvUmVxdWVz
-        dElEPjxQcm9jZXNzZWQ+MjAxNS0wOC0yMVQxMzozNjowOC4yNTM8L1Byb2Nl
-        c3NlZD48UmV0dXJuQ29kZT4wPC9SZXR1cm5Db2RlPjxNZXNzYWdlPtCd0LDR
-        h9C40YHQu9C10L3QvjogNDUsOTY8L01lc3NhZ2U+PENhcmROdW1iZXI+MjAx
-        NTQyPC9DYXJkTnVtYmVyPjxDYXJkQmFsYW5jZT40NS45NjwvQ2FyZEJhbGFu
-        Y2U+PENhcmRBY3RpdmVCYWxhbmNlPjA8L0NhcmRBY3RpdmVCYWxhbmNlPjxD
-        YXJkU3VtbT4xNTMyPC9DYXJkU3VtbT48Q2FyZERpc2NvdW50PjA8L0NhcmRE
-        aXNjb3VudD48TGV2ZWxOYW1lPtCR0LDQt9C+0LLRi9C5IDMlPC9MZXZlbE5h
-        bWU+PENhcmRRdWFudGl0eT4yPC9DYXJkUXVhbnRpdHk+PFN1bW0+MTUzMi4w
+        Nzc0NTA1PC9UcmFuc2FjdGlvbklEPjxSZXF1ZXN0SUQ+MTIzNDwvUmVxdWVz
+        dElEPjxQcm9jZXNzZWQ+MjAxNS0wOC0yNFQwNzo0NDoxMy4zMzwvUHJvY2Vz
+        c2VkPjxSZXR1cm5Db2RlPjA8L1JldHVybkNvZGU+PE1lc3NhZ2U+0J3QsNGH
+        0LjRgdC70LXQvdC+OiA0NSw5NjwvTWVzc2FnZT48Q2FyZE51bWJlcj4yMDE1
+        NDI8L0NhcmROdW1iZXI+PENhcmRCYWxhbmNlPjkxLjkyPC9DYXJkQmFsYW5j
+        ZT48Q2FyZEFjdGl2ZUJhbGFuY2U+NDUuOTY8L0NhcmRBY3RpdmVCYWxhbmNl
+        PjxDYXJkU3VtbT4zMDY0PC9DYXJkU3VtbT48Q2FyZERpc2NvdW50PjA8L0Nh
+        cmREaXNjb3VudD48TGV2ZWxOYW1lPtCR0LDQt9C+0LLRi9C5IDMlPC9MZXZl
+        bE5hbWU+PENhcmRRdWFudGl0eT40PC9DYXJkUXVhbnRpdHk+PFN1bW0+MTUz
+        Mi4wMDwvU3VtbT48RGlzY291bnQ+MC4wMDA8L0Rpc2NvdW50PjxTdW1tRGlz
+        Y291bnRlZD4xNTMyLjAwPC9TdW1tRGlzY291bnRlZD48Q2hhcmdlZEJvbnVz
+        PjQ1Ljk2PC9DaGFyZ2VkQm9udXM+PEFjdGl2ZUNoYXJnZWRCb251cz40NS45
+        NjwvQWN0aXZlQ2hhcmdlZEJvbnVzPjxBdmFpbGFibGVQYXltZW50PjAuMDA8
+        L0F2YWlsYWJsZVBheW1lbnQ+PFdyaXRlb2ZmQm9udXM+MC4wMDwvV3JpdGVv
+        ZmZCb251cz48SXRlbT48UG9zaXRpb25OdW1iZXI+MTwvUG9zaXRpb25OdW1i
+        ZXI+PEFydGljbGU+MTIzPC9BcnRpY2xlPjxQcmljZT4xMDAuMDA8L1ByaWNl
+        PjxRdWFudGl0eT4yLjAwMDwvUXVhbnRpdHk+PFN1bW0+MjAwLjAwPC9TdW1t
+        PjxEaXNjb3VudD4wLjAwMDwvRGlzY291bnQ+PFN1bW1EaXNjb3VudGVkPjIw
+        MC4wMDwvU3VtbURpc2NvdW50ZWQ+PEF2YWlsYWJsZVBheW1lbnQ+MC4wMDwv
+        QXZhaWxhYmxlUGF5bWVudD48V3JpdGVvZmZCb251cz4wLjAwPC9Xcml0ZW9m
+        ZkJvbnVzPjwvSXRlbT48SXRlbT48UG9zaXRpb25OdW1iZXI+MjwvUG9zaXRp
+        b25OdW1iZXI+PEFydGljbGU+NDU2PC9BcnRpY2xlPjxQcmljZT4zMzMuMDA8
+        L1ByaWNlPjxRdWFudGl0eT40LjAwMDwvUXVhbnRpdHk+PFN1bW0+MTMzMi4w
         MDwvU3VtbT48RGlzY291bnQ+MC4wMDA8L0Rpc2NvdW50PjxTdW1tRGlzY291
-        bnRlZD4xNTMyLjAwPC9TdW1tRGlzY291bnRlZD48Q2hhcmdlZEJvbnVzPjQ1
-        Ljk2PC9DaGFyZ2VkQm9udXM+PEFjdGl2ZUNoYXJnZWRCb251cz40NS45Njwv
-        QWN0aXZlQ2hhcmdlZEJvbnVzPjxBdmFpbGFibGVQYXltZW50PjAuMDA8L0F2
-        YWlsYWJsZVBheW1lbnQ+PFdyaXRlb2ZmQm9udXM+MC4wMDwvV3JpdGVvZmZC
-        b251cz48SXRlbT48UG9zaXRpb25OdW1iZXI+MTwvUG9zaXRpb25OdW1iZXI+
-        PEFydGljbGU+MTIzPC9BcnRpY2xlPjxQcmljZT4xMDAuMDA8L1ByaWNlPjxR
-        dWFudGl0eT4yLjAwMDwvUXVhbnRpdHk+PFN1bW0+MjAwLjAwPC9TdW1tPjxE
-        aXNjb3VudD4wLjAwMDwvRGlzY291bnQ+PFN1bW1EaXNjb3VudGVkPjIwMC4w
-        MDwvU3VtbURpc2NvdW50ZWQ+PEF2YWlsYWJsZVBheW1lbnQ+MC4wMDwvQXZh
-        aWxhYmxlUGF5bWVudD48V3JpdGVvZmZCb251cz4wLjAwPC9Xcml0ZW9mZkJv
-        bnVzPjwvSXRlbT48SXRlbT48UG9zaXRpb25OdW1iZXI+MjwvUG9zaXRpb25O
-        dW1iZXI+PEFydGljbGU+NDU2PC9BcnRpY2xlPjxQcmljZT4zMzMuMDA8L1By
-        aWNlPjxRdWFudGl0eT40LjAwMDwvUXVhbnRpdHk+PFN1bW0+MTMzMi4wMDwv
-        U3VtbT48RGlzY291bnQ+MC4wMDA8L0Rpc2NvdW50PjxTdW1tRGlzY291bnRl
-        ZD4xMzMyLjAwPC9TdW1tRGlzY291bnRlZD48QXZhaWxhYmxlUGF5bWVudD4w
-        LjAwPC9BdmFpbGFibGVQYXltZW50PjxXcml0ZW9mZkJvbnVzPjAuMDA8L1dy
-        aXRlb2ZmQm9udXM+PC9JdGVtPjwvQ2hlcXVlUmVzcG9uc2U+PC9Qcm9jZXNz
-        UmVxdWVzdFJlc3VsdD48L1Byb2Nlc3NSZXF1ZXN0UmVzcG9uc2U+PC9zb2Fw
-        OkJvZHk+PC9zb2FwOkVudmVsb3BlPg==
+        bnRlZD4xMzMyLjAwPC9TdW1tRGlzY291bnRlZD48QXZhaWxhYmxlUGF5bWVu
+        dD4wLjAwPC9BdmFpbGFibGVQYXltZW50PjxXcml0ZW9mZkJvbnVzPjAuMDA8
+        L1dyaXRlb2ZmQm9udXM+PC9JdGVtPjwvQ2hlcXVlUmVzcG9uc2U+PC9Qcm9j
+        ZXNzUmVxdWVzdFJlc3VsdD48L1Byb2Nlc3NSZXF1ZXN0UmVzcG9uc2U+PC9z
+        b2FwOkJvZHk+PC9zb2FwOkVudmVsb3BlPg==
     http_version: 
-  recorded_at: Fri, 21 Aug 2015 10:36:13 GMT
+  recorded_at: Mon, 24 Aug 2015 04:44:17 GMT
 - request:
     method: post
     uri: https://mbsdevweb13sp3.manzanagroup.ru:8088/POSProcessing.asmx
@@ -563,26 +563,26 @@ http_interactions:
         PHRuczpQcm9jZXNzUmVxdWVzdD48dG5zOnJlcXVlc3Q+PHRuczpDaGVxdWVS
         ZXF1ZXN0IENoZXF1ZVR5cGU9IkZpc2NhbCI+PHRuczpDYXJkPjx0bnM6Q2Fy
         ZE51bWJlcj4yMDE1NDI8L3RuczpDYXJkTnVtYmVyPjwvdG5zOkNhcmQ+PHRu
-        czpOdW1iZXI+YTg4NTM2MTEtOGE2OC00MjljLWFmMDctMTY3NzBlZjYwNzdm
-        PC90bnM6TnVtYmVyPjx0bnM6UGFpZEJ5Qm9udXM+MC4wPC90bnM6UGFpZEJ5
-        Qm9udXM+PHRuczpJdGVtPjx0bnM6QXJ0aWNsZT4xMjM8L3RuczpBcnRpY2xl
-        Pjx0bnM6UHJpY2U+MTAwLjA8L3RuczpQcmljZT48dG5zOlF1YW50aXR5PjI8
-        L3RuczpRdWFudGl0eT48dG5zOkRpc2NvdW50PjA8L3RuczpEaXNjb3VudD48
-        dG5zOlN1bW0+MjAwLjA8L3RuczpTdW1tPjx0bnM6U3VtbURpc2NvdW50ZWQ+
-        MjAwLjA8L3RuczpTdW1tRGlzY291bnRlZD48dG5zOlBvc2l0aW9uTnVtYmVy
-        PjE8L3RuczpQb3NpdGlvbk51bWJlcj48L3RuczpJdGVtPjx0bnM6SXRlbT48
-        dG5zOkFydGljbGU+NDU2PC90bnM6QXJ0aWNsZT48dG5zOlByaWNlPjMzMy4w
-        PC90bnM6UHJpY2U+PHRuczpRdWFudGl0eT40PC90bnM6UXVhbnRpdHk+PHRu
-        czpEaXNjb3VudD4wPC90bnM6RGlzY291bnQ+PHRuczpTdW1tPjEzMzIuMDwv
-        dG5zOlN1bW0+PHRuczpTdW1tRGlzY291bnRlZD4xMzMyLjA8L3RuczpTdW1t
-        RGlzY291bnRlZD48dG5zOlBvc2l0aW9uTnVtYmVyPjI8L3RuczpQb3NpdGlv
-        bk51bWJlcj48L3RuczpJdGVtPjx0bnM6U3VtbT4xNTMyLjA8L3RuczpTdW1t
-        Pjx0bnM6U3VtbURpc2NvdW50ZWQ+MTUzMi4wPC90bnM6U3VtbURpc2NvdW50
-        ZWQ+PHRuczpEaXNjb3VudD4wLjA8L3RuczpEaXNjb3VudD48dG5zOk9wZXJh
-        dGlvblR5cGU+U2FsZTwvdG5zOk9wZXJhdGlvblR5cGU+PHRuczpSZXF1ZXN0
+        czpOdW1iZXI+NGFmZDk2YmEtOTNkMy00NmNhLWIwMmYtYmZmMTRmMWI3ODdh
+        PC90bnM6TnVtYmVyPjx0bnM6T3BlcmF0aW9uVHlwZT5TYWxlPC90bnM6T3Bl
+        cmF0aW9uVHlwZT48dG5zOlN1bW0+MTUzMi4wPC90bnM6U3VtbT48dG5zOkRp
+        c2NvdW50PjAuMDwvdG5zOkRpc2NvdW50Pjx0bnM6U3VtbURpc2NvdW50ZWQ+
+        MTUzMi4wPC90bnM6U3VtbURpc2NvdW50ZWQ+PHRuczpQYWlkQnlCb251cz4w
+        LjA8L3RuczpQYWlkQnlCb251cz48dG5zOkl0ZW0+PHRuczpQb3NpdGlvbk51
+        bWJlcj4xPC90bnM6UG9zaXRpb25OdW1iZXI+PHRuczpBcnRpY2xlPjEyMzwv
+        dG5zOkFydGljbGU+PHRuczpQcmljZT4xMDAuMDwvdG5zOlByaWNlPjx0bnM6
+        UXVhbnRpdHk+MjwvdG5zOlF1YW50aXR5Pjx0bnM6U3VtbT4yMDAuMDwvdG5z
+        OlN1bW0+PHRuczpEaXNjb3VudD4wPC90bnM6RGlzY291bnQ+PHRuczpTdW1t
+        RGlzY291bnRlZD4yMDAuMDwvdG5zOlN1bW1EaXNjb3VudGVkPjwvdG5zOkl0
+        ZW0+PHRuczpJdGVtPjx0bnM6UG9zaXRpb25OdW1iZXI+MjwvdG5zOlBvc2l0
+        aW9uTnVtYmVyPjx0bnM6QXJ0aWNsZT40NTY8L3RuczpBcnRpY2xlPjx0bnM6
+        UHJpY2U+MzMzLjA8L3RuczpQcmljZT48dG5zOlF1YW50aXR5PjQ8L3RuczpR
+        dWFudGl0eT48dG5zOlN1bW0+MTMzMi4wPC90bnM6U3VtbT48dG5zOkRpc2Nv
+        dW50PjA8L3RuczpEaXNjb3VudD48dG5zOlN1bW1EaXNjb3VudGVkPjEzMzIu
+        MDwvdG5zOlN1bW1EaXNjb3VudGVkPjwvdG5zOkl0ZW0+PHRuczpSZXF1ZXN0
         SUQ+MTIzNDwvdG5zOlJlcXVlc3RJRD48dG5zOk9yZ2FuaXphdGlvbj5pbG5l
         cGFydG5lcjAxPC90bnM6T3JnYW5pemF0aW9uPjx0bnM6RGF0ZVRpbWU+MjAx
-        NS0wOC0yMVQxMzozNjoxMyswMzowMDwvdG5zOkRhdGVUaW1lPjx0bnM6QnVz
+        NS0wOC0yNFQwNzo0NDoxNyswMzowMDwvdG5zOkRhdGVUaW1lPjx0bnM6QnVz
         aW5lc3NVbml0PmlsbmVzaG9wMDE8L3RuczpCdXNpbmVzc1VuaXQ+PHRuczpQ
         T1M+aWxuZXBvczAxPC90bnM6UE9TPjwvdG5zOkNoZXF1ZVJlcXVlc3Q+PC90
         bnM6cmVxdWVzdD48dG5zOm9yZ05hbWU+QTU8L3RuczpvcmdOYW1lPjwvdG5z
@@ -618,9 +618,9 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Date:
-      - Fri, 21 Aug 2015 10:36:09 GMT
+      - Mon, 24 Aug 2015 04:44:14 GMT
       Content-Length:
-      - '814'
+      - '821'
     body:
       encoding: ASCII-8BIT
       base64_string: |
@@ -632,15 +632,15 @@ http_interactions:
         c1JlcXVlc3RSZXNwb25zZSB4bWxucz0iaHR0cDovL2xveWFsdHkubWFuemFu
         YWdyb3VwLnJ1L2xveWFsdHkueHNkIj48UHJvY2Vzc1JlcXVlc3RSZXN1bHQ+
         PENoZXF1ZVJlc3BvbnNlPjxUcmFuc2FjdGlvbklEPi05MjIzMzcyMDM2ODU0
-        Nzc0NTE3PC9UcmFuc2FjdGlvbklEPjxSZXF1ZXN0SUQ+MTIzNDwvUmVxdWVz
-        dElEPjxQcm9jZXNzZWQ+MjAxNS0wOC0yMVQxMzozNjowOS40MjwvUHJvY2Vz
+        Nzc0NTA0PC9UcmFuc2FjdGlvbklEPjxSZXF1ZXN0SUQ+MTIzNDwvUmVxdWVz
+        dElEPjxQcm9jZXNzZWQ+MjAxNS0wOC0yNFQwNzo0NDoxNC45MTwvUHJvY2Vz
         c2VkPjxSZXR1cm5Db2RlPjA8L1JldHVybkNvZGU+PE1lc3NhZ2U+0J3QsNGH
         0LjRgdC70LXQvdC+OiA0NSw5NjwvTWVzc2FnZT48Q2FyZE51bWJlcj4yMDE1
-        NDI8L0NhcmROdW1iZXI+PENhcmRCYWxhbmNlPjQ1Ljk2PC9DYXJkQmFsYW5j
-        ZT48Q2FyZEFjdGl2ZUJhbGFuY2U+NDUuOTY8L0NhcmRBY3RpdmVCYWxhbmNl
-        PjxDYXJkU3VtbT4xNTMyPC9DYXJkU3VtbT48Q2FyZERpc2NvdW50PjA8L0Nh
+        NDI8L0NhcmROdW1iZXI+PENhcmRCYWxhbmNlPjkxLjkyPC9DYXJkQmFsYW5j
+        ZT48Q2FyZEFjdGl2ZUJhbGFuY2U+OTEuOTI8L0NhcmRBY3RpdmVCYWxhbmNl
+        PjxDYXJkU3VtbT4zMDY0PC9DYXJkU3VtbT48Q2FyZERpc2NvdW50PjA8L0Nh
         cmREaXNjb3VudD48TGV2ZWxOYW1lPtCR0LDQt9C+0LLRi9C5IDMlPC9MZXZl
-        bE5hbWU+PENhcmRRdWFudGl0eT4yPC9DYXJkUXVhbnRpdHk+PFN1bW0+MTUz
+        bE5hbWU+PENhcmRRdWFudGl0eT40PC9DYXJkUXVhbnRpdHk+PFN1bW0+MTUz
         Mi4wMDwvU3VtbT48RGlzY291bnQ+MC4wMDA8L0Rpc2NvdW50PjxTdW1tRGlz
         Y291bnRlZD4xNTMyLjAwPC9TdW1tRGlzY291bnRlZD48Q2hhcmdlZEJvbnVz
         PjQ1Ljk2PC9DaGFyZ2VkQm9udXM+PEFjdGl2ZUNoYXJnZWRCb251cz40NS45
@@ -662,7 +662,7 @@ http_interactions:
         ZXNzUmVxdWVzdFJlc3VsdD48L1Byb2Nlc3NSZXF1ZXN0UmVzcG9uc2U+PC9z
         b2FwOkJvZHk+PC9zb2FwOkVudmVsb3BlPg==
     http_version: 
-  recorded_at: Fri, 21 Aug 2015 10:36:14 GMT
+  recorded_at: Mon, 24 Aug 2015 04:44:19 GMT
 - request:
     method: post
     uri: https://mbsdevweb13sp3.manzanagroup.ru:8088/POSProcessing.asmx
@@ -679,12 +679,12 @@ http_interactions:
         ZXF1ZXN0IENoZXF1ZVR5cGU9IkZpc2NhbCI+PHRuczpDYXJkPjx0bnM6Q2Fy
         ZE51bWJlcj4yMDE1NDI8L3RuczpDYXJkTnVtYmVyPjwvdG5zOkNhcmQ+PHRu
         czpUcmFuc2FjdGlvblJlZmVyZW5jZT48dG5zOlRyYW5zYWN0aW9uSUQ+LTky
-        MjMzNzIwMzY4NTQ3NzQ1MTc8L3RuczpUcmFuc2FjdGlvbklEPjwvdG5zOlRy
+        MjMzNzIwMzY4NTQ3NzQ1MDQ8L3RuczpUcmFuc2FjdGlvbklEPjwvdG5zOlRy
         YW5zYWN0aW9uUmVmZXJlbmNlPjx0bnM6T3BlcmF0aW9uVHlwZT5Sb2xsYmFj
         azwvdG5zOk9wZXJhdGlvblR5cGU+PHRuczpSZXF1ZXN0SUQ+MTIzNDwvdG5z
         OlJlcXVlc3RJRD48dG5zOk9yZ2FuaXphdGlvbj5pbG5lcGFydG5lcjAxPC90
-        bnM6T3JnYW5pemF0aW9uPjx0bnM6RGF0ZVRpbWU+MjAxNS0wOC0yMVQxMzoz
-        NjoxNCswMzowMDwvdG5zOkRhdGVUaW1lPjx0bnM6QnVzaW5lc3NVbml0Pmls
+        bnM6T3JnYW5pemF0aW9uPjx0bnM6RGF0ZVRpbWU+MjAxNS0wOC0yNFQwNzo0
+        NDoxOSswMzowMDwvdG5zOkRhdGVUaW1lPjx0bnM6QnVzaW5lc3NVbml0Pmls
         bmVzaG9wMDE8L3RuczpCdXNpbmVzc1VuaXQ+PHRuczpQT1M+aWxuZXBvczAx
         PC90bnM6UE9TPjwvdG5zOkNoZXF1ZVJlcXVlc3Q+PC90bnM6cmVxdWVzdD48
         dG5zOm9yZ05hbWU+QTU8L3RuczpvcmdOYW1lPjwvdG5zOlByb2Nlc3NSZXF1
@@ -720,9 +720,9 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Date:
-      - Fri, 21 Aug 2015 10:36:09 GMT
+      - Mon, 24 Aug 2015 04:44:14 GMT
       Content-Length:
-      - '652'
+      - '660'
     body:
       encoding: ASCII-8BIT
       base64_string: |
@@ -734,22 +734,22 @@ http_interactions:
         c1JlcXVlc3RSZXNwb25zZSB4bWxucz0iaHR0cDovL2xveWFsdHkubWFuemFu
         YWdyb3VwLnJ1L2xveWFsdHkueHNkIj48UHJvY2Vzc1JlcXVlc3RSZXN1bHQ+
         PENoZXF1ZVJlc3BvbnNlPjxUcmFuc2FjdGlvbklEPi05MjIzMzcyMDM2ODU0
-        Nzc0NTE2PC9UcmFuc2FjdGlvbklEPjxSZXF1ZXN0SUQ+MTIzNDwvUmVxdWVz
-        dElEPjxQcm9jZXNzZWQ+MjAxNS0wOC0yMVQxMzozNjowOS42Mzc8L1Byb2Nl
-        c3NlZD48UmV0dXJuQ29kZT4wPC9SZXR1cm5Db2RlPjxNZXNzYWdlPk9LPC9N
-        ZXNzYWdlPjxDYXJkTnVtYmVyPjIwMTU0MjwvQ2FyZE51bWJlcj48Q2FyZEJh
-        bGFuY2U+MDwvQ2FyZEJhbGFuY2U+PENhcmRBY3RpdmVCYWxhbmNlPjA8L0Nh
-        cmRBY3RpdmVCYWxhbmNlPjxDYXJkU3VtbT4wPC9DYXJkU3VtbT48Q2FyZERp
-        c2NvdW50PjA8L0NhcmREaXNjb3VudD48TGV2ZWxOYW1lPtCR0LDQt9C+0LLR
-        i9C5IDMlPC9MZXZlbE5hbWU+PENhcmRRdWFudGl0eT4xPC9DYXJkUXVhbnRp
-        dHk+PFN1bW0+MC4wMDwvU3VtbT48RGlzY291bnQ+MC4wMDA8L0Rpc2NvdW50
-        PjxTdW1tRGlzY291bnRlZD4wLjAwPC9TdW1tRGlzY291bnRlZD48Q2hhcmdl
-        ZEJvbnVzPjAuMDA8L0NoYXJnZWRCb251cz48QWN0aXZlQ2hhcmdlZEJvbnVz
-        PjAuMDA8L0FjdGl2ZUNoYXJnZWRCb251cz48QXZhaWxhYmxlUGF5bWVudD4w
-        LjAwPC9BdmFpbGFibGVQYXltZW50PjxXcml0ZW9mZkJvbnVzPjAuMDA8L1dy
-        aXRlb2ZmQm9udXM+PC9DaGVxdWVSZXNwb25zZT48L1Byb2Nlc3NSZXF1ZXN0
-        UmVzdWx0PjwvUHJvY2Vzc1JlcXVlc3RSZXNwb25zZT48L3NvYXA6Qm9keT48
-        L3NvYXA6RW52ZWxvcGU+
+        Nzc0NTAzPC9UcmFuc2FjdGlvbklEPjxSZXF1ZXN0SUQ+MTIzNDwvUmVxdWVz
+        dElEPjxQcm9jZXNzZWQ+MjAxNS0wOC0yNFQwNzo0NDoxNS4zNzwvUHJvY2Vz
+        c2VkPjxSZXR1cm5Db2RlPjA8L1JldHVybkNvZGU+PE1lc3NhZ2U+T0s8L01l
+        c3NhZ2U+PENhcmROdW1iZXI+MjAxNTQyPC9DYXJkTnVtYmVyPjxDYXJkQmFs
+        YW5jZT40NS45NjwvQ2FyZEJhbGFuY2U+PENhcmRBY3RpdmVCYWxhbmNlPjQ1
+        Ljk2PC9DYXJkQWN0aXZlQmFsYW5jZT48Q2FyZFN1bW0+MTUzMjwvQ2FyZFN1
+        bW0+PENhcmREaXNjb3VudD4wPC9DYXJkRGlzY291bnQ+PExldmVsTmFtZT7Q
+        kdCw0LfQvtCy0YvQuSAzJTwvTGV2ZWxOYW1lPjxDYXJkUXVhbnRpdHk+Mzwv
+        Q2FyZFF1YW50aXR5PjxTdW1tPjAuMDA8L1N1bW0+PERpc2NvdW50PjAuMDAw
+        PC9EaXNjb3VudD48U3VtbURpc2NvdW50ZWQ+MC4wMDwvU3VtbURpc2NvdW50
+        ZWQ+PENoYXJnZWRCb251cz4wLjAwPC9DaGFyZ2VkQm9udXM+PEFjdGl2ZUNo
+        YXJnZWRCb251cz4wLjAwPC9BY3RpdmVDaGFyZ2VkQm9udXM+PEF2YWlsYWJs
+        ZVBheW1lbnQ+MC4wMDwvQXZhaWxhYmxlUGF5bWVudD48V3JpdGVvZmZCb251
+        cz4wLjAwPC9Xcml0ZW9mZkJvbnVzPjwvQ2hlcXVlUmVzcG9uc2U+PC9Qcm9j
+        ZXNzUmVxdWVzdFJlc3VsdD48L1Byb2Nlc3NSZXF1ZXN0UmVzcG9uc2U+PC9z
+        b2FwOkJvZHk+PC9zb2FwOkVudmVsb3BlPg==
     http_version: 
-  recorded_at: Fri, 21 Aug 2015 10:36:15 GMT
+  recorded_at: Mon, 24 Aug 2015 04:44:19 GMT
 recorded_with: VCR 2.9.3
