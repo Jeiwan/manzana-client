@@ -2,12 +2,14 @@ module Manzana
   class Client
     module Operations
       def sale(sale_cheque:)
-        cheque_request(type: 'Soft', cheque: prepare_cheque('Sale', sale_cheque))
-        cheque_request(type: 'Fiscal', cheque: prepare_cheque('Sale', sale_cheque))
+        cheque = prepare_cheque('Sale', sale_cheque)
+        cheque_request(type: 'Soft', cheque: cheque)
+        cheque_request(type: 'Fiscal', cheque: cheque)
       end
 
       def return(sale_cheque:, cheque_reference:)
-        cheque_request(type: 'Fiscal', cheque: prepare_cheque('Return', sale_cheque, cheque_reference))
+        cheque = prepare_cheque('Return', sale_cheque, cheque_reference)
+        cheque_request(type: 'Fiscal', cheque: cheque)
       end
 
       def rollback(card_number:, transaction_id:)
