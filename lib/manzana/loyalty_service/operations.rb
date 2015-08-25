@@ -38,15 +38,22 @@ module Manzana
         end
 
         sale_cheque = sale_cheque.data
-        summ = cheque_items.map { |item| item.data['Summ'].to_f }.inject(:+)
-        summ_discounted = cheque_items.map { |item| item.data['SummDiscounted'].to_f }.inject(:+)
+        if cheque_items.empty?
+          summ = 0
+          summ_discounted = 0
+          discount = 0
+        else
+          summ = cheque_items.map { |item| item.data['Summ'].to_f }.inject(:+)
+          summ_discounted = cheque_items.map { |item| item.data['SummDiscounted'].to_f }.inject(:+)
+          discount = ((1 - summ_discounted / summ) * 100).round(2)
+        end
         Manzana::Data::Cheque.new(
           card_number: sale_cheque['Card']['CardNumber'],
           number: sale_cheque['Number'],
           operation_type: operation_type,
           summ: summ,
           summ_discounted: summ_discounted,
-          discount: ((1 - summ_discounted / summ) * 100).round(2),
+          discount: discount,
           paid_by_bonus: sale_cheque['PaidByBonus'],
           items: cheque_items,
           coupon: sale_cheque['Coupons'] ? sale_cheque['Coupons']['Number'] : nil,

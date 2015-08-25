@@ -84,6 +84,39 @@ describe Manzana::LoyaltyService do
         end
       end
     end
+
+    context 'when receipt has no positions' do
+      it 'returns successful result' do
+        VCR.use_cassette('sale/no_positions') do
+          sale_cheque = Manzana::Data::SaleCheque.new(
+            card_number: '201542',
+            number: '7c2115f3-ef35-4be8-b7b5-92e51c509444',
+            paid_by_bonus: 0.0,
+            items: []
+          )
+          
+          expect(subject.sale(sale_cheque: sale_cheque)).to include(
+            active_charged_bonus: "0.00",
+            available_payment: "0.00",
+            card_active_balance: "48.34",
+            card_balance: "48.34",
+            card_discount: "0",
+            card_number: "201542",
+            card_quantity: "5",
+            card_summ: "1611.2",
+            charged_bonus: "0.00",
+            discount: "0.000",
+            level_name: "Базовый 3%",
+            message: "OK",
+            request_id: "1234",
+            return_code: "0",
+            summ: "0.00",
+            summ_discounted: "0.00",
+            writeoff_bonus: "0.00",
+          )
+        end
+      end
+    end
   end
 
   describe '#return' do
