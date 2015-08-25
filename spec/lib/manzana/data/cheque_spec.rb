@@ -48,7 +48,7 @@ describe Manzana::Data::Cheque do
       end
     end
 
-    context 'when cheque_reference is prodvided' do
+    context 'when return_receipt_number is prodvided' do
       it 'returns ChequeReference as well' do
         item1 = Manzana::Data::ChequeItem.new(
           position_number: 1,
@@ -68,10 +68,8 @@ describe Manzana::Data::Cheque do
           discount: 10.0,
           summ_discounted: 300.0
         )
-        cheque_reference = Manzana::Data::ChequeReference.new(
-          number: 123123,
-          date_time: DateTime.new(2015, 8, 10, 8)
-        )
+
+        return_receipt_number = '123123'
 
         expect(Manzana::Data::Cheque.new(
           card_number: '12345',
@@ -81,7 +79,7 @@ describe Manzana::Data::Cheque do
           discount: 0,
           summ_discounted: 123.45,
           paid_by_bonus: 0.0,
-          cheque_reference: cheque_reference,
+          return_receipt_number: return_receipt_number,
           items: [
             item1,
             item2
@@ -96,7 +94,7 @@ describe Manzana::Data::Cheque do
           'Discount' => 0.0,
           'SummDiscounted' => 123.45,
           'PaidByBonus' => 0.0,
-          'ChequeReference' => cheque_reference.data,
+          'ChequeReference' => { 'Number' => return_receipt_number },
           'Item' => [ item1.data, item2.data ]
         )
       end

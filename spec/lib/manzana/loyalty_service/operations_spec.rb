@@ -144,12 +144,9 @@ describe Manzana::LoyaltyService do
             items: [item1, item2]
           )
 
-          cheque_reference = Manzana::Data::ChequeReference.new(
-            number: '7c2115f3-ef35-4be8-b7b5-92e51c509444',
-            date_time: DateTime.iso8601('2015-08-24T07:21:52.163')
-          )
+          return_receipt_number = '7c2115f3-ef35-4be8-b7b5-92e51c509444'
 
-          expect(subject.return(sale_cheque: sale_cheque, cheque_reference: cheque_reference)).to include(
+          expect(subject.return(sale_cheque: sale_cheque, receipt_uuid: return_receipt_number)).to include(
             active_charged_bonus: "0.00",
             available_payment: "0.00",
             card_active_balance: "0",

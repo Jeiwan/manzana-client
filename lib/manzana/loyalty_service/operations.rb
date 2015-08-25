@@ -7,8 +7,8 @@ module Manzana
         cheque_request(type: 'Fiscal', cheque: cheque)
       end
 
-      def return(sale_cheque:, cheque_reference:)
-        cheque = prepare_cheque('Return', sale_cheque, cheque_reference)
+      def return(sale_cheque:, receipt_uuid:)
+        cheque = prepare_cheque('Return', sale_cheque, receipt_uuid)
         cheque_request(type: 'Fiscal', cheque: cheque)
       end
 
@@ -22,7 +22,7 @@ module Manzana
 
       private
 
-      def prepare_cheque(operation_type, sale_cheque, cheque_reference = nil)
+      def prepare_cheque(operation_type, sale_cheque, return_receipt_number = nil)
         cheque_items = sale_cheque.data['Item'].map.with_index do |item, index|
           discounted = item['Price'].to_f * (1 - (item['Discount'].to_f / 100))
 
@@ -57,7 +57,7 @@ module Manzana
           paid_by_bonus: sale_cheque['PaidByBonus'],
           items: cheque_items,
           coupon: sale_cheque['Coupons'] ? sale_cheque['Coupons']['Number'] : nil,
-          cheque_reference: cheque_reference
+          return_receipt_number: return_receipt_number
         )
       end
     end

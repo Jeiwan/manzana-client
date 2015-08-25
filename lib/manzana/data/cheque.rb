@@ -4,7 +4,7 @@ module Manzana
       attr_accessor :data
 
       def initialize(card_number:, number:, operation_type:, summ:, discount:, summ_discounted:, paid_by_bonus:, items:,
-                    cheque_reference: nil, coupon: nil)
+                    return_receipt_number: nil, coupon: nil)
         @data = {
           'Card' => {
             'CardNumber' => card_number
@@ -18,7 +18,7 @@ module Manzana
           'Item' => items.map(&:data)
         }
 
-        @data['ChequeReference'] = cheque_reference.data if cheque_reference
+        @data['ChequeReference'] = { 'Number' => return_receipt_number } if return_receipt_number
         @data['Coupons'] = { 'Coupon' => { 'Number' => coupon } } if coupon
       end
     end

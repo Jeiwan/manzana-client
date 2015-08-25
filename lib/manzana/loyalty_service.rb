@@ -68,7 +68,8 @@ module Manzana
         body['ChequeReference'].merge!(
           'Organization' => @organization,
           'BusinessUnit' => @business_unit,
-          'POS' => @pos
+          'POS' => @pos,
+          'DateTime' => DateTime.now.iso8601
         )
       end
 
