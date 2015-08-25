@@ -2,7 +2,7 @@ module Manzana
   class LoyaltyService
     include Operations
 
-    def initialize(wsdl:, basic_auth: false, organization:, business_unit:, pos:, org_name:, logger: nil)
+    def initialize(wsdl:, basic_auth: false, organization: nil, business_unit:, pos:, org_name:, logger: nil)
       @client = Savon.client do
         wsdl wsdl
         if basic_auth
@@ -22,12 +22,22 @@ module Manzana
       @org_name = org_name
     end
 
-    def balance_request(card_number:)
-      body = {
-        'Card' => {
-          'CardNumber' => card_number
+    def balance_request(card_number: nil, mobile_phone: nil)
+      raise ArgumentError, 'missing keyword: card_number or mobile_phone' if [card_number, mobile_phone].all?(&:nil?)
+
+      body = if card_number
+        {
+          'Card' => {
+            'CardNumber' => card_number
+          }
         }
-      }
+      elsif mobile_phone
+        {
+          'Card' => {
+            'MobilePhone' => mobile_phone
+          }
+        }
+      end
       operation = 'BalanceRequest'
       response = @client.call(:process_request, message: build_request(operation, body))
       parse_response(response.body, operation)
@@ -81,13 +91,15 @@ module Manzana
     end
 
     def common_data
-      {
+      data = {
         'RequestID' => generate_request_id,
-        'Organization' => @organization,
         'DateTime' => DateTime.now.iso8601,
         'BusinessUnit' => @business_unit,
         'POS' => @pos
       }
+
+      data['Organization'] = @organization unless @organization.nil?
+      data
     end
   end
 end

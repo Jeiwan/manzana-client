@@ -25,7 +25,51 @@ describe Manzana::LoyaltyService do
       end
     end
 
-    context 'when everything is fine' do
+    context 'when nothin is provided' do
+      it 'raises an error' do
+        expect{ subject.balance_request() }.to raise_error ArgumentError, 'missing keyword: card_number or mobile_phone'
+      end
+    end
+
+    context 'when mobile phone is provided' do
+      it 'returns an error' do
+        VCR.use_cassette('balance_request/mobile_phone') do
+          expect(subject.balance_request(mobile_phone: '+73213213213')).to include(
+            card_active_balance:  "4.76",
+            card_balance:  "4.76",
+            card_discount:  "0.000",
+            card_number:  "201546",
+            card_summ:  "158.40",
+            card_summ_discounted:  "158.40",
+            level_name:  "Базовый 3%",
+            message:  "OK",
+            phone:  "+73213213213",
+            request_id:  "1234",
+            return_code:  "0",
+          )
+        end
+      end
+    end
+
+    context 'when both card number and mobile phone are provided' do
+      it 'returns result seeking by phone' do
+        VCR.use_cassette('balance_request/card_number_mobile_phone') do
+          expect(subject.balance_request(card_number: '2015100', mobile_phone: '+73213213213')).to include(
+            card_active_balance: '1000.00',
+            card_balance: '1000.00',
+            card_discount: '0.000',
+            card_number: '2015100',
+            card_summ: '0.00',
+            card_summ_discounted: '0.00',
+            message: 'OK',
+            request_id: '1234',
+            return_code: '0'
+          )
+        end
+      end
+    end
+
+    context 'when only card number is provided' do
       it "returns card's balance" do
         VCR.use_cassette('balance_request/success') do
           expect(subject.balance_request(card_number: '2015100')).to include(
