@@ -1,5 +1,6 @@
 require 'nori'
 require 'savon'
+require 'securerandom'
 
 module Manzana
 end

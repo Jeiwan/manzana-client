@@ -87,7 +87,7 @@ module Manzana
     end
 
     def generate_request_id
-      1234
+      SecureRandom.hex
     end
 
     def common_data
