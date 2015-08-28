@@ -56,7 +56,7 @@ module Manzana
           discount: discount,
           paid_by_bonus: sale_cheque['PaidByBonus'],
           items: cheque_items,
-          coupon: sale_cheque['Coupons'] ? sale_cheque['Coupons']['Number'] : nil,
+          coupon: sale_cheque['Coupons'] ? sale_cheque['Coupons']['Coupon']['Number'] : nil,
           return_receipt_number: return_receipt_number
         )
       end
