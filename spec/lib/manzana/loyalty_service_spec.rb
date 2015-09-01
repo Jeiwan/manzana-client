@@ -204,6 +204,23 @@ describe Manzana::LoyaltyService do
           end
         end
       end
+
+      context 'when internet is not abailable' do
+        before do
+          stub_request(:any, 'https://mbsdevweb13sp3.manzanagroup.ru:8088/POSProcessing.asmx?WSDL').and_timeout
+        end
+
+        it 'returns error' do
+          VCR.use_cassette('cheque_request/soft_success') do
+            response = subject.cheque_request(type: 'Soft', cheque: cheque)
+            expect(response).to include(
+              return_code: -1,
+              message: 'Отсутствует подключение к интернету'
+            )
+            expect(response[:cheque]).not_to be_nil
+          end
+        end
+      end
     end
   end
 end

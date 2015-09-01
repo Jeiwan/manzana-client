@@ -24,7 +24,7 @@ module Manzana
 
       def prepare_cheque(operation_type, sale_cheque, return_receipt_number = nil)
         cheque_items = sale_cheque.data['Item'].map.with_index do |item, index|
-          discounted = item['Price'].to_f * (1 - (item['Discount'].to_f / 100))
+          discounted = (item['Price'].to_f * (1 - (item['Discount'].to_f / 100))).round(2)
 
           Manzana::Data::ChequeItem.new(
             position_number: index + 1,

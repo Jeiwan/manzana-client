@@ -16,7 +16,7 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 require 'vcr'
-require 'webmock'
+require 'webmock/rspec'
 require 'manzana'
 
 RSpec.configure do |config|

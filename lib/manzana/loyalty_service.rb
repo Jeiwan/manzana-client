@@ -2,7 +2,7 @@ module Manzana
   class LoyaltyService
     include Operations
 
-    def initialize(wsdl:, basic_auth: false, organization: nil, business_unit:, pos:, org_name:, logger: nil)
+    def initialize(wsdl:, basic_auth: false, organization: nil, business_unit:, pos:, org_name:, logger: nil, timeout: nil)
       @client = Savon.client do
         wsdl wsdl
         if basic_auth
@@ -14,6 +14,11 @@ module Manzana
           logger logger
         end
         pretty_print_xml true
+
+        if timeout
+          open_timeout timeout
+          read_timeout timeout
+        end
       end
 
       @organization = organization
@@ -45,8 +50,11 @@ module Manzana
 
     def cheque_request(type: 'Soft', cheque:)
       operation = 'ChequeRequest'
-      response = @client.call(:process_request, message: build_request(operation, cheque.data, { 'ChequeType' => type }))
+      request = build_request(operation, cheque.data, { 'ChequeType' => type })
+      response = @client.call(:process_request, message: request)
       parse_response(response.body, operation)
+    rescue Timeout::Error =>e
+      { return_code: -1, message: 'Отсутствует подключение к интернету', cheque: cheque.data }
     end
 
     private
