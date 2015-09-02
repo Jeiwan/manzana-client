@@ -1,6 +1,6 @@
 module Manzana
   class AccountService
-    def initialize(wsdl:, basic_auth: false, organization:, business_unit:, pos:, org_name:, logger: nil)
+    def initialize(wsdl:, basic_auth: false, organization:, business_unit:, pos:, org_name:, logger: nil, timeout: nil)
       @client = Savon.client do
         wsdl wsdl
         if basic_auth
@@ -12,6 +12,11 @@ module Manzana
           logger logger
         end
         pretty_print_xml true
+
+        if timeout
+          open_timeout timeout
+          read_timeout timeout
+        end
       end
 
       @organization = organization
