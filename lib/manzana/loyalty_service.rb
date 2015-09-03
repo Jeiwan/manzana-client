@@ -53,8 +53,6 @@ module Manzana
       request = build_request(operation, cheque.data, { 'ChequeType' => type })
       response = @client.call(:process_request, message: request)
       parse_response(response.body, operation)
-    rescue Timeout::Error =>e
-      { return_code: -1, message: 'Отсутствует подключение к интернету', cheque: cheque.data }
     end
 
     private
