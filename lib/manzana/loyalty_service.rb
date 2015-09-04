@@ -46,13 +46,18 @@ module Manzana
       operation = 'BalanceRequest'
       response = @client.call(:process_request, message: build_request(operation, body))
       parse_response(response.body, operation)
+    rescue Timeout::Error, Errno::ETIMEDOUT => e
+      process_timeout
     end
 
     def cheque_request(type: 'Soft', cheque:)
       operation = 'ChequeRequest'
       request = build_request(operation, cheque.data, { 'ChequeType' => type })
+
       response = @client.call(:process_request, message: request)
       parse_response(response.body, operation)
+    rescue Timeout::Error, Errno::ETIMEDOUT => e
+      process_timeout(cheque: cheque.data)
     end
 
     private
@@ -106,6 +111,14 @@ module Manzana
 
       data['Organization'] = @organization unless @organization.nil?
       data
+    end
+
+    def process_timeout(cheque: nil)
+      {
+        return_code: '-1',
+        message: 'Отсутствует подключение к интернету',
+        cheque: cheque
+      }
     end
   end
 end

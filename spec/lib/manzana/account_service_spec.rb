@@ -36,6 +36,25 @@ describe Manzana::AccountService do
         end
       end
     end
+
+    context 'when internet is not available' do
+      before do
+        stub_request(:any, 'http://mbsdevweb13sp3.manzanagroup.ru:8188/PrivateOfficeDataService.asmx?WSDL').and_timeout
+      end
+
+      it 'returns error' do
+        VCR.use_cassette('cheque_request/soft_success') do
+          expect(subject.contact_registration(
+            card_number: '31337',
+            mobile_phone: '+71234567890',
+            questionnaire_barcode: '321321321'
+          )).to eq(
+            return_code: '-1',
+            message: 'Отсутствует подключение к интернету'
+          )
+        end
+      end
+    end
   end
 
   describe '#complete_registration' do
@@ -57,6 +76,24 @@ describe Manzana::AccountService do
             contact_id: '92520229-db47-e511-80df-00155dfa8014',
             temp_code: '61868054'
           )).to eq(code: '110043', message: 'Временный код не найден.')
+        end
+      end
+    end
+
+    context 'when internet is not available' do
+      before do
+        stub_request(:any, 'http://mbsdevweb13sp3.manzanagroup.ru:8188/PrivateOfficeDataService.asmx?WSDL').and_timeout
+      end
+
+      it 'returns error' do
+        VCR.use_cassette('cheque_request/soft_success') do
+          expect(subject.complete_registration(
+            contact_id: '92520229-db47-e511-80df-00155dfa8014',
+            temp_code: '61868054'
+          )).to eq(
+            return_code: '-1',
+            message: 'Отсутствует подключение к интернету'
+          )
         end
       end
     end
@@ -88,6 +125,23 @@ describe Manzana::AccountService do
         end
       end
     end
+
+    context 'when internet is not available' do
+      before do
+        stub_request(:any, 'http://mbsdevweb13sp3.manzanagroup.ru:8188/PrivateOfficeDataService.asmx?WSDL').and_timeout
+      end
+
+      it 'returns error' do
+        VCR.use_cassette('cheque_request/soft_success') do
+          expect(subject.registration_code_send(
+            contact_id: '7a3294f9-e447-e511-80df-00155dfa8014'
+          )).to eq(
+            return_code: '-1',
+            message: 'Отсутствует подключение к интернету'
+          )
+        end
+      end
+    end
   end
 
   describe '#rollback_registration' do
@@ -107,6 +161,23 @@ describe Manzana::AccountService do
           expect(subject.rollback_registration(
             contact_id: 'c72514ca-e447-e511-80df-00155dfa8014'
           )).to eq(code: '110055', message: 'Регистрацию этого контакта нельзя отменить: у контакта более одной карты.')
+        end
+      end
+    end
+
+    context 'when internet is not available' do
+      before do
+        stub_request(:any, 'http://mbsdevweb13sp3.manzanagroup.ru:8188/PrivateOfficeDataService.asmx?WSDL').and_timeout
+      end
+
+      it 'returns error' do
+        VCR.use_cassette('cheque_request/soft_success') do
+          expect(subject.rollback_registration(
+            contact_id: 'c72514ca-e447-e511-80df-00155dfa8014'
+          )).to eq(
+            return_code: '-1',
+            message: 'Отсутствует подключение к интернету'
+          )
         end
       end
     end
@@ -131,6 +202,24 @@ describe Manzana::AccountService do
             card_number: '201542',
             mobile_phone: '+71234567890'
           )).to eq(code: '110051', message: 'Карта не может быть использована для замены.')
+        end
+      end
+    end
+
+    context 'when internet is not available' do
+      before do
+        stub_request(:any, 'http://mbsdevweb13sp3.manzanagroup.ru:8188/PrivateOfficeDataService.asmx?WSDL').and_timeout
+      end
+
+      it 'returns error' do
+        VCR.use_cassette('cheque_request/soft_success') do
+          expect(subject.card_replace(
+            card_number: '201542',
+            mobile_phone: '+71234567890'
+          )).to eq(
+            return_code: '-1',
+            message: 'Отсутствует подключение к интернету'
+          )
         end
       end
     end

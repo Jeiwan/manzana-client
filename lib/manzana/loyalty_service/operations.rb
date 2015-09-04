@@ -5,8 +5,6 @@ module Manzana
         cheque = prepare_cheque('Sale', sale_cheque)
         cheque_request(type: 'Soft', cheque: cheque)
         cheque_request(type: 'Fiscal', cheque: cheque)
-      rescue Timeout::Error, Errno::ETIMEDOUT =>e
-        { return_code: -1, message: 'Отсутствует подключение к интернету', cheque: cheque.data }
       end
 
       def return(sale_cheque:, receipt_uuid:)

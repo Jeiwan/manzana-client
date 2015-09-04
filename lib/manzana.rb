@@ -1,6 +1,8 @@
-require 'nori'
 require 'savon'
+require 'nori'
+require 'gyoku'
 require 'securerandom'
+require 'logger'
 
 module Manzana
 end

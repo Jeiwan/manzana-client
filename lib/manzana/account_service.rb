@@ -33,6 +33,8 @@ module Manzana
       }
 
       send_request(contract: 'contact_registration', parameters: parameters)
+    rescue Timeout::Error, Errno::ETIMEDOUT =>e
+      process_timeout
     end
 
     def complete_registration(contact_id:, temp_code:)
@@ -42,6 +44,8 @@ module Manzana
       }
 
       send_request(contract: 'complete_registration', parameters: parameters)
+    rescue Timeout::Error, Errno::ETIMEDOUT =>e
+      process_timeout
     end
 
     def registration_code_send(contact_id:)
@@ -50,6 +54,8 @@ module Manzana
       }
 
       send_request(contract: 'registration_code_send', parameters: parameters)
+    rescue Timeout::Error, Errno::ETIMEDOUT =>e
+      process_timeout
     end
 
     def rollback_registration(contact_id:)
@@ -58,6 +64,8 @@ module Manzana
       }
 
       send_request(contract: 'rollback_registration', parameters: parameters)
+    rescue Timeout::Error, Errno::ETIMEDOUT =>e
+      process_timeout
     end
 
     def card_replace(card_number:, mobile_phone:)
@@ -67,6 +75,8 @@ module Manzana
       }
 
       send_request(contract: 'card_replace', parameters: parameters)
+    rescue Timeout::Error, Errno::ETIMEDOUT =>e
+      process_timeout
     end
 
     private
@@ -114,6 +124,13 @@ module Manzana
     rescue Savon::SOAPFault => e
       code, message = parse_error(e)
       { code: code, message: message }
+    end
+
+    def process_timeout
+      {
+        return_code: '-1',
+        message: 'Отсутствует подключение к интернету'
+      }
     end
   end
 end
