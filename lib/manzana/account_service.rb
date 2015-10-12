@@ -129,7 +129,7 @@ module Manzana
     def process_timeout
       {
         code: '-1',
-        message: 'Отсутствует подключение к интернету'
+        message: 'Отсутствует подключение к интернету. Повторите попытку позже',
       }
     end
   end
