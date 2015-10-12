@@ -116,7 +116,7 @@ module Manzana
     def process_timeout(cheque: nil)
       {
         return_code: '-1',
-        message: 'Отсутствует подключение к интернету',
+        message: 'Отсутствует подключение к интернету. Повторите попытку позже',
         cheque: cheque
       }
     end
