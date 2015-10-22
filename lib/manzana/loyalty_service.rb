@@ -46,7 +46,7 @@ module Manzana
       operation = 'BalanceRequest'
       response = @client.call(:process_request, message: build_request(operation, body))
       parse_response(response.body, operation)
-    rescue Timeout::Error, Errno::ETIMEDOUT, Errno::ENETUNREACH => e
+    rescue Timeout::Error, Errno::ETIMEDOUT, Errno::ENETUNREACH, SocketError => e
       process_timeout
     end
 
@@ -56,7 +56,7 @@ module Manzana
 
       response = @client.call(:process_request, message: request)
       parse_response(response.body, operation)
-    rescue Timeout::Error, Errno::ETIMEDOUT, Errno::ENETUNREACH => e
+    rescue Timeout::Error, Errno::ETIMEDOUT, Errno::ENETUNREACH, SocketError => e
       process_timeout(cheque: cheque.data)
     end
 
