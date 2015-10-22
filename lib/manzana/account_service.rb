@@ -33,7 +33,7 @@ module Manzana
       }
 
       send_request(contract: 'contact_registration', parameters: parameters)
-    rescue Timeout::Error, Errno::ETIMEDOUT =>e
+    rescue Timeout::Error, Errno::ETIMEDOUT, Errno::ENETUNREACH =>e
       process_timeout
     end
 
@@ -44,7 +44,7 @@ module Manzana
       }
 
       send_request(contract: 'complete_registration', parameters: parameters)
-    rescue Timeout::Error, Errno::ETIMEDOUT =>e
+    rescue Timeout::Error, Errno::ETIMEDOUT, Errno::ENETUNREACH =>e
       process_timeout
     end
 
@@ -54,7 +54,7 @@ module Manzana
       }
 
       send_request(contract: 'registration_code_send', parameters: parameters)
-    rescue Timeout::Error, Errno::ETIMEDOUT =>e
+    rescue Timeout::Error, Errno::ETIMEDOUT, Errno::ENETUNREACH =>e
       process_timeout
     end
 
@@ -64,7 +64,7 @@ module Manzana
       }
 
       send_request(contract: 'rollback_registration', parameters: parameters)
-    rescue Timeout::Error, Errno::ETIMEDOUT =>e
+    rescue Timeout::Error, Errno::ETIMEDOUT, Errno::ENETUNREACH =>e
       process_timeout
     end
 
@@ -75,7 +75,7 @@ module Manzana
       }
 
       send_request(contract: 'card_replace', parameters: parameters)
-    rescue Timeout::Error, Errno::ETIMEDOUT =>e
+    rescue Timeout::Error, Errno::ETIMEDOUT, Errno::ENETUNREACH =>e
       process_timeout
     end
 
